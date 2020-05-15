@@ -8,11 +8,12 @@ from torch import nn
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 plt.gray()
+
 #%%
 ''' CONFIG Variables '''
 TEST_SIZE = 0.1
 BATCH_SIZE = 128
-EPOCHS = 10
+EPOCHS = 3
 
 # %%
 # Can just load the whole CSV into memory since it's only 70MB
@@ -29,6 +30,7 @@ labels_to_image = {
     8:"bag",
     9:"ankle boot"
 }
+
 # %%
 X, y = DATA.values[:,1:], DATA['label'].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE)
@@ -69,6 +71,7 @@ class CNN(nn.Module):
         num_examples = x.shape[0]
         x = self.cnn_layers(x).view(num_examples,-1)
         x = self.linear_layers(x)
+        #x = F.sigmoid(x)
         return x
 
 # %%
@@ -84,21 +87,27 @@ optim = torch.optim.Adam(cnn.parameters(),lr=0.01)
 losses = []
 epoch_loss = []
 criterion = nn.CrossEntropyLoss()
+acc_sum = 0
+total = 0
 for epoch in range(EPOCHS):
-    for i in range(N_train // BATCH_SIZE):   
+    for i in range(N_train // BATCH_SIZE):
+        total += BATCH_SIZE   
         imgs = X_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         labels = y_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         preds = cnn(imgs)
+        acc_sum += torch.sum(preds.argmax(dim=1) == labels)
         loss = criterion(preds,labels)
         lossrepr = float(loss)
-        if i == 0: print(f"INITIAL EPOCH: {epoch} LOSS: {lossrepr:.2f}"); epoch_loss.append(float(loss))
+        if i == 0: 
+            print(f"INITIAL EPOCH: {epoch} LOSS: {lossrepr:.2f}"); epoch_loss.append(float(loss))
         losses.append(lossrepr)
         optim.zero_grad()
         loss.backward()
         optim.step()
-        if i % 50 == 0: print(f"{lossrepr:.2f}")
-    test_acc = float(criterion(cnn(X_test_torch),y_test_torch))
-    print(f"TEST ACCURACY: {test_acc:.2f}")
+        if i % 50 == 0: 
+            print(f"{lossrepr:.2f} || {float(acc_sum)/total:.2f}%"); acc_sum=0; total = 0
+    test_loss = float(criterion(cnn(X_test_torch),y_test_torch))
+    print(f"TEST LOSS: {test_loss:.2f}")
 np.save("./results/classical/losses.npy",np.asarray(losses))
 # %%
 print(epoch_loss)
