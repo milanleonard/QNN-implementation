@@ -81,7 +81,7 @@ def conv(qc, filter_size, image, mode='threshold'):
             section = padded_img[down_idx:down_idx + filter_size, across_idx: across_idx + filter_size]
             init_arr = encoding_function(section,mode)
             qc.initialize(init_arr, qc.qubits)
-            job = execute(qc, backend, shots=10)
+            job = execute(qc, backend, shots=500)
             results = job.result()
             counts = results.get_counts(qc)
             output = np.zeros(len(init_arr))
