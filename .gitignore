@@ -2,4 +2,4 @@ fashion-mnist/fashion-mnist_train.csv
 .DS_Store
 *~
 /quantum_data
-__pycache___/
+/__pycache___
