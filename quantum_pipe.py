@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
-
+import time
 #%%
 SINGLE_GATE_SET = np.array(['X','Y','Z','T','S','H'])
 MULTI_GATE_SET = np.array(['CNOT'])
@@ -87,8 +87,9 @@ def conv(qc, filter_size, image, mode='threshold'):
     ''' Write the loops to slide our 'filter' over our image '''
     # here filter doesn't actually matter, we just use the flattened binary list as our init
     # might as well hard-code 3x3 filters, can happily handle 2^9 = 512 states
+    start = time.time()
     prepped_img = prepare_img(filter_size, image)
-    print(image.shape)
+    print(prepped_img.shape)
     img_height, img_width = prepped_img.shape
     conv_output = np.zeros(image.shape)
     for down_idx in range(img_height - (filter_size-1)):
@@ -106,7 +107,7 @@ def conv(qc, filter_size, image, mode='threshold'):
             output = output/ np.sqrt(np.sum(output**2))
             entropy = shannon_entropy(output)
             conv_output[down_idx,across_idx] = entropy
-    print("filter completed")
+    print(f"filter completed in {time.time()-start} s")
     return conv_output
 
 
