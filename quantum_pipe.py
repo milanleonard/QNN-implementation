@@ -7,6 +7,8 @@ from qiskit import QuantumCircuit, Aer, execute, QuantumRegister
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from PIL import Image
+
 #%%
 SINGLE_GATE_SET = np.array(['X','Y','Z','T','S','H'])
 MULTI_GATE_SET = np.array(['CNOT'])
@@ -66,23 +68,32 @@ moving on with my life
 We want to initialize the state s.t. arbitray combinations of a NxN grid of 0s and 1s map to a different quantum state
 Here we try and define the convolutional filter that we need
 '''
+
+def prepare_img(filter_size,img):
+    ''' Unfortunately 28*28 takes WAYY too long so having to resize image'''
+    image = Image.fromarray(img).resize((14,14))
+    image = np.array(image)
+    image = pad_img(filter_size, image)
+    return image
+
 # Pass in mean value on the qubits
 def pad_img(filter_size,img):
     if filter_size % 2 == 0:
         return np.pad(img,((1,0),(1,0)))
     else:
         return np.pad(img,1)
+
 def conv(qc, filter_size, image, mode='threshold'):
     ''' Write the loops to slide our 'filter' over our image '''
     # here filter doesn't actually matter, we just use the flattened binary list as our init
     # might as well hard-code 3x3 filters, can happily handle 2^9 = 512 states
-    padded_img = pad_img(filter_size, image)
+    prepped_img = prepare_img(filter_size, image)
     print(image.shape)
-    img_height, img_width = padded_img.shape
+    img_height, img_width = prepped_img.shape
     conv_output = np.zeros(image.shape)
     for down_idx in range(img_height - (filter_size-1)):
         for across_idx in range(img_width  - (filter_size-1)):
-            section = padded_img[down_idx:down_idx + filter_size, across_idx: across_idx + filter_size]
+            section = prepped_img[down_idx:down_idx + filter_size, across_idx: across_idx + filter_size]
             init_arr = encoding_function(section,mode)
             qc.initialize(init_arr, qc.qubits)
             job = execute(qc, BACKEND, shots=500)
@@ -125,8 +136,8 @@ def shannon_entropy(input_arr):
 # %%
 if __name__ == '__main__':
     train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
-    qc = generate_random_circuit(depth=10,num_qubits=9,prob_appl_single=0.5,prob_appl_multi=0.8)
-    job = execute(qc, BACKEND, shots=1000)
+    # qc = generate_random_circuit(depth=10,num_qubits=9,prob_appl_single=0.5,prob_appl_multi=0.8)
+    # job = execute(qc, BACKEND, shots=1000)
     result = job.result()
     result.get_counts(qc)
     #currently not being clever with my threshold at all just rounding 
@@ -139,3 +150,5 @@ if __name__ == '__main__':
     print("Post thresholding")
     plt.imshow(dummy_example_rounded)
     plt.show()
+
+# %%
