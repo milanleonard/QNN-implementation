@@ -9,6 +9,7 @@ from quantum_pipe import generate_random_circuit, conv
 import pandas as pd
 import numpy as np
 import argparse
+import gc
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-start_idx',type=int)
@@ -33,5 +34,6 @@ for idx, image in enumerate(this_data):
     outputs = [conv(qc, 2, image) for qc in quantum_circuits]
     print(f"IMAGE COMPLETED: {idx+1} of {args.num_datapoints}")
     img_outputs.append(outputs)
+    gc.collect()
 np.save(f'./quantum_data/start{args.start_idx}to{args.start_idx+args.num_datapoints}.npy',img_outputs)
 
