@@ -27,12 +27,12 @@ train_data = None # this is just for garbage collector to deal with
 #%%
 
 for idx, image in enumerate(this_data):
+    # Note the incredibly annoying reinitialization of qcs every run comes from https://stackoverflow.com/questions/61929724/python-script-slowing-down-as-time-progresses-resolved?noredirect=1#comment109537202_61929724
     np.random.seed(42)
-    quantum_circuits = [generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7) for _ in range(2)]
+    quantum_circuits = [generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7) for _ in range(12)]
     image = image.reshape((28,28))
     image = prepare_img(2,image)
     outputs = [conv(qc, 2, image) for qc in quantum_circuits]
     print(f"IMAGE COMPLETED: {idx+1} of {args.num_datapoints}")
     np.save(f'quantum_data/img{args.start_idx + idx}.npy',outputs)
     outputs, image = None, None
-    gc.collect()

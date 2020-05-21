@@ -1,0 +1,1567 @@
+filter completed in 15.936100959777832 s
+filter completed in 16.478416919708252 s
+         15378121 function calls (15376161 primitive calls) in 32.415 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      788    4.225    0.005    4.225    0.005 {method 'acquire' of '_thread.lock' objects}
+    60368    3.497    0.000    9.678    0.000 dagcircuit.py:292(apply_operation_back)
+   241472    1.316    0.000    3.521    0.000 copy.py:66(copy)
+  1576240    1.155    0.000    1.175    0.000 {built-in method builtins.isinstance}
+   930412    0.671    0.000    0.671    0.000 bit.py:75(__hash__)
+    60368    0.661    0.000    1.203    0.000 assemble_circuits.py:71(<listcomp>)
+   244216    0.652    0.000    2.235    0.000 {built-in method builtins.all}
+    60760    0.608    0.000    1.107    0.000 quantumcircuit.py:581(_update_parameter_table)
+   814205    0.572    0.000    0.572    0.000 {built-in method builtins.hasattr}
+   369656    0.566    0.000    1.022    0.000 retworkx_dagcircuit.py:62(_add_multi_graph_edge)
+   120736    0.555    0.000    1.180    0.000 copy.py:268(_reconstruct)
+   181692    0.549    0.000    0.814    0.000 register.py:98(__repr__)
+   267344    0.541    0.000    0.898    0.000 dagnode.py:104(__hash__)
+   741272    0.524    0.000    0.524    0.000 register.py:74(name)
+   737744    0.521    0.000    0.521    0.000 bit.py:49(register)
+    38612    0.496    0.000    0.918    0.000 instruction.py:209(<listcomp>)
+     1568    0.490    0.000    2.167    0.001 dagcircuit.py:1237(collect_runs)
+   244020    0.481    0.000    1.018    0.000 quantumcircuit.py:644(<genexpr>)
+   369656    0.456    0.000    0.456    0.000 {method 'add_edge' of 'retworkx.PyDAG' objects}
+   183260    0.431    0.000    0.928    0.000 retworkx_dagcircuit.py:120(predecessors)
+     1960    0.426    0.000    0.650    0.000 {lexicographical_topological_sort}
+    66640    0.425    0.000    1.715    0.000 dagnode.py:34(__init__)
+   181692    0.423    0.000    1.237    0.000 bit.py:71(__repr__)
+    60760    0.393    0.000    4.680    0.000 quantumcircuit.py:549(_append)
+   552916    0.389    0.000    0.389    0.000 bit.py:60(index)
+   120736    0.372    0.000    3.893    0.000 instruction.py:292(__deepcopy__)
+   183260    0.342    0.000    0.342    0.000 {method 'predecessors' of 'retworkx.PyDAG' objects}
+    60368    0.331    0.000    1.387    0.000 instruction.py:203(assemble)
+   182280    0.327    0.000    0.537    0.000 _collections_abc.py:879(__iter__)
+    60760    0.316    0.000    0.534    0.000 quantumcircuit.py:634(_check_dups)
+      392    0.310    0.001    3.548    0.009 assemble_circuits.py:22(_assemble_circuit)
+   273630    0.307    0.000    0.307    0.000 {built-in method builtins.getattr}
+   244020    0.306    0.000    0.431    0.000 quantumcircuit.py:642(<genexpr>)
+      392    0.302    0.001    7.228    0.018 dag_to_circuit.py:19(dag_to_circuit)
+   401804    0.298    0.000    0.298    0.000 {method 'get' of 'dict' objects}
+   184828    0.286    0.000    0.413    0.000 quantumcircuit.py:227(has_register)
+   120736    0.268    0.000    0.397    0.000 dagcircuit.py:246(_check_bits)
+   183260    0.249    0.000    0.249    0.000 {method 'remove_edge' of 'retworkx.PyDAG' objects}
+   347907    0.245    0.000    0.245    0.000 {built-in method builtins.len}
+    60368    0.241    0.000    2.143    0.000 dagcircuit.py:275(_add_op_node)
+   303800    0.236    0.000    0.236    0.000 dagcircuit.py:742(<genexpr>)
+   333200    0.225    0.000    0.225    0.000 retworkx_dagcircuit.py:109(_key)
+      392    0.219    0.001   12.406    0.032 circuit_to_dag.py:20(circuit_to_dag)
+   182280    0.210    0.000    0.210    0.000 quantumcircuitdata.py:31(__getitem__)
+   120736    0.207    0.000    0.302    0.000 copyreg.py:87(__newobj__)
+   120736    0.204    0.000    4.097    0.000 instruction.py:274(copy)
+    60760    0.199    0.000    2.099    0.000 quantumcircuit.py:640(_check_qargs)
+   120736    0.195    0.000    0.195    0.000 {method '__reduce_ex__' of 'object' objects}
+   274792    0.187    0.000    0.187    0.000 {built-in method builtins.hash}
+   275580    0.183    0.000    0.183    0.000 {built-in method builtins.id}
+   209524    0.177    0.000    0.177    0.000 {built-in method builtins.iter}
+   249704    0.176    0.000    0.176    0.000 {method 'append' of 'list' objects}
+    60760    0.170    0.000    0.461    0.000 quantumcircuit.py:647(_check_cargs)
+   183260    0.163    0.000    0.163    0.000 {method 'index' of 'list' objects}
+      784    0.152    0.000    0.295    0.000 dagcircuit.py:961(op_nodes)
+     7448    0.147    0.000    0.253    0.000 inspect.py:2879(_bind)
+   122311    0.144    0.000    0.144    0.000 {method 'update' of 'dict' objects}
+   185612    0.137    0.000    0.137    0.000 register.py:86(size)
+    66640    0.135    0.000    0.229    0.000 retworkx_dagcircuit.py:50(_add_multi_graph_node)
+   159740    0.120    0.000    0.120    0.000 instruction.py:132(params)
+     7448    0.105    0.000    0.345    0.000 inspect.py:2117(_signature_from_function)
+   120736    0.104    0.000    0.104    0.000 dagnode.py:61(op)
+   120736    0.098    0.000    0.098    0.000 {method 'copy' of 'list' objects}
+   121128    0.095    0.000    0.095    0.000 {built-in method __new__ of type object at 0x7f166b450240}
+    66640    0.094    0.000    0.094    0.000 {method 'add_node' of 'retworkx.PyDAG' objects}
+    60760    0.092    0.000    0.248    0.000 assemble_circuits.py:60(<genexpr>)
+   120737    0.090    0.000    0.090    0.000 {built-in method builtins.issubclass}
+     7448    0.071    0.000    0.509    0.000 inspect.py:2198(_signature_from_callable)
+      784    0.067    0.000    0.067    0.000 {dag_longest_path_length}
+    60368    0.064    0.000    0.064    0.000 qasm_qobj.py:41(__init__)
+     7448    0.063    0.000    0.915    0.000 basepasses.py:35(_freeze_init_parameters)
+    60760    0.060    0.000    0.062    0.000 {method 'union' of 'set' objects}
+    13720    0.060    0.000    0.120    0.000 inspect.py:2467(__init__)
+        2    0.059    0.029   32.415   16.207 quantum_pipe.py:86(conv)
+    19796    0.057    0.000    0.191    0.000 gate.py:85(assemble)
+     7448    0.050    0.000    1.003    0.000 basepasses.py:30(__call__)
+     3136    0.048    0.000    0.122    0.000 dagcircuit.py:202(_add_wire)
+    62328    0.047    0.000    0.054    0.000 quantumcircuit.py:651(<genexpr>)
+    62328    0.047    0.000    0.048    0.000 quantumcircuit.py:649(<genexpr>)
+    60368    0.046    0.000    0.046    0.000 dagnode.py:72(qargs)
+     1569    0.045    0.000    0.296    0.000 {built-in method builtins.any}
+    60368    0.045    0.000    0.045    0.000 dagcircuit.py:264(_bits_in_condition)
+      392    0.044    0.000    0.142    0.000 unroller.py:39(run)
+    60368    0.043    0.000    0.043    0.000 dagcircuit.py:232(_check_condition)
+     3920    0.042    0.000    2.789    0.001 runningpassmanager.py:152(_run_this_pass)
+    12544    0.042    0.000    0.070    0.000 register.py:106(__getitem__)
+      392    0.041    0.000   22.592    0.058 passmanager.py:257(_run_single_circuit)
+     7448    0.040    0.000    0.078    0.000 inspect.py:2750(__init__)
+      784    0.038    0.000    1.243    0.002 cx_cancellation.py:23(run)
+     6272    0.036    0.000    0.135    0.000 postprocess.py:48(format_counts_memory)
+     1960    0.034    0.000    0.061    0.000 base.py:127(dump_additional_data)
+    41160    0.034    0.000    0.039    0.000 {built-in method builtins.next}
+     7448    0.030    0.000    0.058    0.000 inspect.py:484(unwrap)
+    40768    0.029    0.000    0.029    0.000 inspect.py:2517(name)
+    21168    0.028    0.000    0.038    0.000 inspect.py:2799(<genexpr>)
+    13720    0.028    0.000    0.040    0.000 enum.py:284(__call__)
+      784    0.026    0.000    0.026    0.000 {built-in method posix.urandom}
+      392    0.024    0.000    0.048    0.000 instruction.py:137(params)
+    14896    0.022    0.000    0.032    0.000 inspect.py:158(isfunction)
+    30184    0.021    0.000    0.021    0.000 inspect.py:2529(kind)
+    10196    0.021    0.000    0.021    0.000 {built-in method time.time}
+    11760    0.021    0.000    0.073    0.000 register.py:132(__iter__)
+     8624    0.020    0.000    0.046    0.000 retworkx_dagcircuit.py:116(successors)
+    13328    0.020    0.000    0.029    0.000 transpile.py:371(<genexpr>)
+     6272    0.019    0.000    0.029    0.000 postprocess.py:38(_separate_bitstring)
+     3920    0.019    0.000    0.031    0.000 runningpassmanager.py:192(_log_pass)
+     3920    0.019    0.000    2.853    0.001 runningpassmanager.py:125(_do_pass)
+     8624    0.019    0.000    0.019    0.000 {method 'successors' of 'retworkx.PyDAG' objects}
+      392    0.018    0.000    1.034    0.003 level1.py:49(level_1_pass_manager)
+    21560    0.018    0.000    0.018    0.000 {method 'startswith' of 'str' objects}
+     6272    0.017    0.000    0.035    0.000 postprocess.py:32(_pad_zeros)
+     7448    0.017    0.000    0.270    0.000 inspect.py:3010(bind)
+     3920    0.016    0.000    0.041    0.000 runningpassmanager.py:197(_update_valid_passes)
+     7448    0.016    0.000    0.016    0.000 basepasses.py:54(__init__)
+     6272    0.015    0.000    0.020    0.000 postprocess.py:22(_hex_to_bin)
+    19796    0.015    0.000    0.015    0.000 gate.py:92(label)
+     3920    0.015    0.000    0.136    0.000 fields.py:287(serialize)
+1960/1176    0.015    0.000    0.151    0.000 schema.py:501(_serialize)
+      392    0.015    0.000   22.522    0.057 runningpassmanager.py:95(run)
+1960/1176    0.014    0.000    0.194    0.000 schema.py:527(dump)
+     7448    0.014    0.000    0.536    0.000 inspect.py:3081(signature)
+     3920    0.014    0.000    0.078    0.000 schema.py:1192(_invoke_processors)
+     7448    0.014    0.000    0.522    0.000 inspect.py:2829(from_callable)
+     2352    0.013    0.000    0.086    0.000 quantumcircuit.py:429(<listcomp>)
+     7058    0.013    0.000    0.019    0.000 {method 'add' of 'set' objects}
+    13720    0.012    0.000    0.012    0.000 enum.py:526(__new__)
+     7448    0.011    0.000    0.017    0.000 inspect.py:504(_is_wrapper)
+     7057    0.011    0.000    0.020    0.000 abc.py:137(__instancecheck__)
+    13720    0.011    0.000    0.011    0.000 {method 'isidentifier' of 'str' objects}
+      392    0.010    0.000   27.474    0.070 execute.py:40(execute)
+      392    0.010    0.000    0.042    0.000 assemble.py:166(_parse_common_args)
+     6272    0.010    0.000    0.010    0.000 {built-in method builtins.format}
+     5096    0.010    0.000    0.016    0.000 __init__.py:1368(info)
+     3920    0.010    0.000    0.028    0.000 utils.py:213(get_value)
+      392    0.010    0.000    0.074    0.000 transpile.py:310(_parse_transpile_args)
+     3920    0.010    0.000    0.048    0.000 fields.py:209(get_value)
+     6272    0.010    0.000    0.010    0.000 {method 'item' of 'numpy.generic' objects}
+      784    0.010    0.000    0.010    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+     7057    0.009    0.000    0.010    0.000 {built-in method _abc._abc_instancecheck}
+     1176    0.009    0.000    0.020    0.000 result.py:247(_get_experiment)
+     3920    0.009    0.000    0.015    0.000 utils.py:239(_get_value_for_key)
+      395    0.009    0.000    0.009    0.000 {built-in method posix.stat}
+      392    0.009    0.000   23.777    0.061 transpile.py:42(transpile)
+     3528    0.009    0.000    0.018    0.000 runningpassmanager.py:305(__iter__)
+      784    0.009    0.000    0.009    0.000 {is_directed_acyclic_graph}
+      784    0.009    0.000    0.012    0.000 uuid.py:121(__init__)
+     5488    0.008    0.000    0.014    0.000 basepasses.py:90(is_analysis_pass)
+      392    0.008    0.000    0.143    0.000 postprocess.py:157(format_counts)
+     6272    0.008    0.000    0.008    0.000 {method 'format' of 'str' objects}
+      392    0.008    0.000    3.563    0.009 assemble_circuits.py:113(assemble_circuits)
+      392    0.008    0.000    0.066    0.000 initializer.py:44(__init__)
+    10977    0.008    0.000    0.008    0.000 {built-in method builtins.callable}
+     7448    0.008    0.000    0.008    0.000 {method 'values' of 'mappingproxy' objects}
+      392    0.008    0.000   23.638    0.060 transpile.py:255(_transpile_circuit)
+     1960    0.007    0.000    0.086    0.000 schema.py:1057(_invoke_dump_processors)
+     7840    0.007    0.000    0.007    0.000 basepasses.py:60(__hash__)
+      392    0.007    0.000    3.631    0.009 assemble.py:43(assemble)
+     7448    0.007    0.000    0.007    0.000 inspect.py:2609(__init__)
+     1568    0.007    0.000    0.012    0.000 assemble_circuits.py:75(<listcomp>)
+     1960    0.007    0.000    0.659    0.000 retworkx_dagcircuit.py:102(topological_nodes)
+      392    0.007    0.000    0.081    0.000 dagcircuit.py:182(add_qreg)
+     3920    0.007    0.000    0.035    0.000 schema.py:469(get_attribute)
+1568/1176    0.007    0.000    0.012    0.000 runningpassmanager.py:259(controller_factory)
+      392    0.006    0.000    0.372    0.001 result.py:160(get_counts)
+     3920    0.006    0.000    0.010    0.000 basepasses.py:81(is_transformation_pass)
+      392    0.006    0.000    0.016    0.000 quantum_pipe.py:133(shannon_entropy)
+      392    0.006    0.000    0.018    0.000 thread.py:145(submit)
+     5096    0.006    0.000    0.006    0.000 __init__.py:1614(isEnabledFor)
+      784    0.006    0.000    0.031    0.000 <__array_function__ internals>:2(sum)
+      784    0.006    0.000    0.006    0.000 {method 'nodes' of 'retworkx.PyDAG' objects}
+      784    0.006    0.000   27.192    0.035 parallel.py:72(parallel_map)
+     7448    0.006    0.000    0.006    0.000 {built-in method sys.getrecursionlimit}
+      784    0.006    0.000    0.013    0.000 fixed_point.py:39(run)
+      392    0.006    0.000    0.074    0.000 dagcircuit.py:192(add_creg)
+      392    0.006    0.000    0.024    0.000 quantumcircuit.py:137(__init__)
+      784    0.006    0.000    0.006    0.000 {built-in method builtins.repr}
+     7448    0.006    0.000    0.006    0.000 {method 'items' of 'collections.OrderedDict' objects}
+      392    0.006    0.000    0.016    0.000 dagcircuit.py:59(__new__)
+      392    0.006    0.000    0.124    0.000 quantumcircuit.py:524(append)
+      392    0.006    0.000    0.011    0.000 quantumcircuit.py:605(add_register)
+     1960    0.005    0.000    0.664    0.000 dagcircuit.py:735(topological_op_nodes)
+     7448    0.005    0.000    0.005    0.000 inspect.py:2835(parameters)
+      392    0.005    0.000    0.005    0.000 quantum_pipe.py:123(<listcomp>)
+      392    0.005    0.000    4.240    0.011 _base.py:408(result)
+     6272    0.005    0.000    0.005    0.000 {built-in method builtins.bin}
+     1176    0.005    0.000    0.022    0.000 runningpassmanager.py:61(append)
+     1568    0.005    0.000    0.067    0.000 quantumcircuit.py:498(qbit_argument_conversion)
+      392    0.005    0.000    0.015    0.000 quantum_pipe.py:113(encoding_function)
+     6672    0.005    0.000    0.005    0.000 {method 'join' of 'str' objects}
+     2352    0.005    0.000    0.091    0.000 quantumcircuit.py:424(qubits)
+      784    0.005    0.000    0.043    0.000 uuid.py:759(uuid4)
+     5488    0.005    0.000    0.005    0.000 runningpassmanager.py:217(__iter__)
+     3920    0.005    0.000    0.005    0.000 basepasses.py:66(name)
+      784    0.005    0.000    0.016    0.000 fromnumeric.py:73(_wrapreduction)
+      393    0.005    0.000    4.232    0.011 threading.py:264(wait)
+     1568    0.005    0.000    0.006    0.000 fencedobjs.py:65(__init__)
+      785    0.004    0.000    0.007    0.000 copy.py:132(deepcopy)
+     2352    0.004    0.000    0.004    0.000 schema.py:1053(_has_processors)
+      392    0.004    0.000    0.021    0.000 transpile.py:228(_check_circuits_coupling_map)
+      392    0.004    0.000    0.048    0.000 aerbackend.py:86(run)
+     2352    0.004    0.000    0.006    0.000 result.py:278(<genexpr>)
+      784    0.004    0.000    0.989    0.001 optimize_1q_gates.py:47(run)
+      392    0.004    0.000    0.004    0.000 {built-in method builtins.sum}
+      784    0.004    0.000    0.004    0.000 uuid.py:266(__str__)
+     5492    0.004    0.000    0.004    0.000 {method 'items' of 'dict' objects}
+      784    0.004    0.000    0.021    0.000 fromnumeric.py:2092(sum)
+      784    0.004    0.000    0.008    0.000 os.py:674(__getitem__)
+     1176    0.004    0.000    0.007    0.000 passmanager.py:162(_normalize_passes)
+     1176    0.004    0.000    0.012    0.000 passmanager.py:68(append)
+      786    0.004    0.000    0.004    0.000 {built-in method numpy.zeros}
+      784    0.004    0.000    0.079    0.000 dagcircuit.py:602(depth)
+     1176    0.004    0.000    0.198    0.000 base.py:332(to_dict)
+      392    0.003    0.000    0.045    0.000 transpile.py:364(_parse_basis_gates)
+      392    0.003    0.000    0.006    0.000 assemble.py:302(_parse_circuit_args)
+      784    0.003    0.000    0.087    0.000 depth.py:23(run)
+     2352    0.003    0.000    0.003    0.000 {method 'intersection_update' of 'set' objects}
+      392    0.003    0.000    0.029    0.000 passmanager.py:220(_create_running_passmanager)
+      784    0.003    0.000    0.069    0.000 fields.py:559(_serialize)
+     1176    0.003    0.000    0.004    0.000 runningpassmanager.py:87(_normalize_flow_controller)
+      784    0.003    0.000    0.005    0.000 fencedobjs.py:28(__getattribute__)
+     1176    0.003    0.000    0.005    0.000 quantumcircuit.py:171(data)
+     1568    0.003    0.000    0.004    0.000 quantumcircuit.py:462(_bit_argument_conversion)
+      392    0.003    0.000    0.005    0.000 retworkx_dagcircuit.py:43(__init__)
+      784    0.003    0.000    0.004    0.000 fencedobjs.py:32(__getitem__)
+      784    0.003    0.000    0.011    0.000 _collections_abc.py:657(get)
+      392    0.003    0.000    0.193    0.000 initializer.py:250(initialize)
+      393    0.003    0.000    0.003    0.000 threading.py:216(__init__)
+      392    0.003    0.000    0.051    0.000 instruction.py:53(__init__)
+      392    0.003    0.000    0.004    0.000 transpile.py:250(_log_transpile_time)
+      784    0.003    0.000    0.183    0.000 result.py:57(data)
+     1960    0.003    0.000    0.003    0.000 fencedobjs.py:24(__init__)
+      392    0.003    0.000    0.003    0.000 parametertable.py:27(__init__)
+      392    0.002    0.000    0.006    0.000 _base.py:312(__init__)
+      392    0.002    0.000    0.005    0.000 transpile.py:377(_parse_coupling_map)
+      392    0.002    0.000    0.004    0.000 execute.py:34(_log_submission_time)
+      784    0.002    0.000    0.004    0.000 os.py:752(encode)
+     1176    0.002    0.000    0.004    0.000 qasm_qobj.py:325(__init__)
+      392    0.002    0.000    0.020    0.000 user_config.py:98(get_config)
+      392    0.002    0.000    0.069    0.000 quantumcircuit.py:541(<listcomp>)
+      392    0.002    0.000    0.020    0.000 aerjob.py:61(submit)
+      392    0.002    0.000    0.002    0.000 {method 'put' of '_queue.SimpleQueue' objects}
+      784    0.002    0.000    0.009    0.000 retworkx_dagcircuit.py:59(_get_multi_graph_nodes)
+      392    0.002    0.000   22.595    0.058 passmanager.py:172(run)
+      784    0.002    0.000    0.023    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+     1568    0.002    0.000    0.002    0.000 fencedobjs.py:40(_check_if_fenced)
+      392    0.002    0.000    0.003    0.000 aerjob.py:54(__init__)
+     1176    0.002    0.000    0.002    0.000 quantumcircuitdata.py:28(__init__)
+      392    0.002    0.000    0.004    0.000 runningpassmanager.py:35(__init__)
+     1963    0.002    0.000    0.002    0.000 schema.py:410(dict_class)
+     1568    0.002    0.000    0.002    0.000 basebackend.py:57(configuration)
+      392    0.002    0.000    0.002    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+      392    0.002    0.000    0.003    0.000 assemble.py:37(_log_assembly_time)
+      784    0.002    0.000    0.006    0.000 level1.py:145(_opt_control)
+      784    0.002    0.000    0.003    0.000 initializer.py:240(broadcast_arguments)
+      392    0.002    0.000    0.003    0.000 transpile.py:407(_parse_initial_layout)
+      392    0.002    0.000    0.002    0.000 dagcircuit.py:67(__init__)
+      392    0.002    0.000    0.003    0.000 instructionset.py:43(add)
+      392    0.002    0.000    0.003    0.000 transpile.py:397(_parse_backend_properties)
+      392    0.002    0.000    0.002    0.000 quantumcircuit.py:212(_increment_instances)
+      392    0.002    0.000    0.003    0.000 stochastic_swap.py:52(__init__)
+     1176    0.002    0.000    0.002    0.000 runningpassmanager.py:291(__init__)
+      392    0.002    0.000    0.002    0.000 dense_layout.py:39(__init__)
+      787    0.002    0.000    0.002    0.000 {built-in method from_bytes}
+      392    0.002    0.000    0.003    0.000 set_layout.py:28(__init__)
+      392    0.002    0.000    0.008    0.000 os.py:770(getenv)
+      784    0.002    0.000    0.002    0.000 qasm_qobj.py:251(__init__)
+      392    0.001    0.000    0.001    0.000 {method 'astype' of 'numpy.ndarray' objects}
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:2087(_sum_dispatcher)
+      392    0.001    0.000    4.243    0.011 aerjob.py:37(_wrapper)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:138(<listcomp>)
+      392    0.001    0.000    0.010    0.000 genericpath.py:27(isfile)
+      392    0.001    0.000    0.004    0.000 runningpassmanager.py:299(__init__)
+      392    0.001    0.000    4.242    0.011 aerjob.py:76(result)
+      392    0.001    0.000    0.002    0.000 run_config.py:32(__init__)
+      784    0.001    0.000    0.001    0.000 {method 'encode' of 'str' objects}
+      784    0.001    0.000    0.003    0.000 assemble.py:339(<genexpr>)
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:74(<dictcomp>)
+      395    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:416(parent)
+      392    0.001    0.000    0.002    0.000 trivial_layout.py:34(__init__)
+      392    0.001    0.000    0.002    0.000 layout_2q_distance.py:34(__init__)
+      392    0.001    0.000    0.005    0.000 assemble.py:319(_expand_parameters)
+      784    0.001    0.000    0.003    0.000 transpile.py:173(<genexpr>)
+      392    0.001    0.000    0.002    0.000 full_ancilla_allocation.py:36(__init__)
+      392    0.001    0.000    0.002    0.000 fencedobjs.py:58(__init__)
+      392    0.001    0.000    0.002    0.000 thread.py:176(_adjust_thread_count)
+      392    0.001    0.000    0.002    0.000 unroller.py:29(__init__)
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:387(__init__)
+      392    0.001    0.000    0.002    0.000 optimize_1q_gates.py:36(__init__)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:1397(parameters)
+     1568    0.001    0.000    0.001    0.000 {method 'values' of 'dict' objects}
+      392    0.001    0.000    0.002    0.000 check_map.py:28(__init__)
+     1176    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}
+      392    0.001    0.000    0.002    0.000 fixed_point.py:30(__init__)
+      392    0.001    0.000    0.001    0.000 passmanager.py:33(__init__)
+      784    0.001    0.000    0.001    0.000 quantumcircuit.py:624(<listcomp>)
+      392    0.001    0.000    0.002    0.000 check_cx_direction.py:28(__init__)
+      392    0.001    0.000    0.002    0.000 cx_direction.py:38(__init__)
+      784    0.001    0.000    0.001    0.000 assemble.py:136(<genexpr>)
+      392    0.001    0.000    0.003    0.000 runningpassmanager.py:212(__init__)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:610(<listcomp>)
+      392    0.001    0.000    0.199    0.001 remove_reset_in_zero_state.py:24(run)
+      392    0.001    0.000    0.001    0.000 {built-in method math.isclose}
+      392    0.001    0.000    0.001    0.000 {method '_acquire_restore' of '_thread.RLock' objects}
+      784    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+      784    0.001    0.000    0.001    0.000 optimize_1q_gates.py:260(_split_runs_on_parameters)
+      392    0.001    0.000    0.001    0.000 basejob.py:33(__init__)
+      392    0.001    0.000    0.001    0.000 passmanager_config.py:22(__init__)
+      784    0.001    0.000    0.001    0.000 {method 'count' of 'list' objects}
+      393    0.001    0.000    0.001    0.000 threading.py:243(__exit__)
+      393    0.001    0.000    0.001    0.000 threading.py:240(__enter__)
+      392    0.001    0.000    0.001    0.000 transpile.py:473(_parse_output_name)
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:176(__init__)
+      784    0.001    0.000    0.001    0.000 fields.py:499(schema)
+      392    0.001    0.000    0.001    0.000 transpile.py:392(<listcomp>)
+      394    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+      392    0.001    0.000    0.001    0.000 transpile.py:467(_parse_callback)
+      392    0.001    0.000    0.001    0.000 instructionset.py:25(__init__)
+      392    0.001    0.000    0.001    0.000 transpile.py:431(<listcomp>)
+      392    0.001    0.000    0.001    0.000 threading.py:75(RLock)
+      392    0.001    0.000    0.001    0.000 {built-in method math.log2}
+      784    0.001    0.000    0.001    0.000 transpile.py:230(<genexpr>)
+      392    0.001    0.000    0.001    0.000 thread.py:46(__init__)
+      392    0.001    0.000    0.001    0.000 transpile.py:437(_parse_layout_method)
+      392    0.001    0.000    0.001    0.000 transpile.py:449(_parse_seed_transpiler)
+      392    0.001    0.000    0.001    0.000 transpile.py:443(_parse_routing_method)
+      392    0.001    0.000    0.001    0.000 transpile.py:455(_parse_optimization_level)
+      392    0.001    0.000    0.001    0.000 assemble.py:314(<dictcomp>)
+      784    0.001    0.000    0.001    0.000 {method 'values' of 'collections.OrderedDict' objects}
+      784    0.001    0.000    0.001    0.000 propertyset.py:22(__missing__)
+      392    0.001    0.000    0.001    0.000 {method '_release_save' of '_thread.RLock' objects}
+      392    0.001    0.000    0.001    0.000 assemble.py:206(<dictcomp>)
+      784    0.001    0.000    0.001    0.000 copy.py:190(_deepcopy_atomic)
+      402    0.001    0.000    0.001    0.000 {method 'rpartition' of 'str' objects}
+      392    0.001    0.000    0.001    0.000 initializer.py:241(<listcomp>)
+      392    0.001    0.000    0.001    0.000 {method '__enter__' of '_thread.RLock' objects}
+      392    0.001    0.000    0.001    0.000 _base.py:382(__get_result)
+      392    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+      392    0.000    0.000    0.000    0.000 parametertable.py:55(get_keys)
+      396    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+      392    0.000    0.000    0.000    0.000 {method 'is_integer' of 'float' objects}
+      392    0.000    0.000    0.000    0.000 transpile.py:499(<listcomp>)
+      392    0.000    0.000    0.000    0.000 parametertable.py:34(<genexpr>)
+      392    0.000    0.000    0.000    0.000 run_config.py:72(to_dict)
+      393    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+      393    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+      392    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+      392    0.000    0.000    0.000    0.000 quantumcircuit.py:542(<listcomp>)
+      392    0.000    0.000    0.000    0.000 basebackend.py:65(properties)
+      392    0.000    0.000    0.000    0.000 {method 'keys' of 'collections.OrderedDict' objects}
+      392    0.000    0.000    0.000    0.000 {method '_is_owned' of '_thread.RLock' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.start_new_thread}
+      392    0.000    0.000    0.000    0.000 transpile.py:410(_layout_from_raw)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:914(get_data)
+        1    0.000    0.000   32.415   32.415 quantum_process.py:37(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.FileIO' objects}
+       10    0.000    0.000    0.000    0.000 copyreg.py:96(_slotnames)
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 schema.py:364(__init__)
+        1    0.000    0.000    0.000    0.000 schema.py:944(_init_fields)
+        5    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:793(get_code)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1356(find_spec)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:58(<listcomp>)
+        1    0.000    0.000    0.000    0.000 threading.py:763(__init__)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:56(_path_join)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:271(cache_from_source)
+        1    0.000    0.000    0.000    0.000 retworkx_dagcircuit.py:24(<module>)
+        1    0.000    0.000    0.001    0.001 threading.py:834(start)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:882(_find_spec)
+        2    0.000    0.000    0.000    0.000 fields.py:551(_nested_normalized_option)
+        4    0.000    0.000    0.000    0.000 __init__.py:212(_acquireLock)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:504(_init_module_attrs)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:663(_load_unlocked)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:978(_find_and_load)
+       10    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        2    0.000    0.000    0.000    0.000 fields.py:404(root)
+        4    0.000    0.000    0.000    0.000 _collections_abc.py:72(_check_methods)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:722(exec_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+        5    0.000    0.000    0.000    0.000 abc.py:141(__subclasscheck__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:523(_compile_bytecode)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:574(spec_from_file_location)
+        4    0.000    0.000    0.000    0.000 __init__.py:221(_releaseLock)
+        4    0.000    0.000    0.000    0.000 _collections_abc.py:92(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:318(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:576(module_from_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        4    0.000    0.000    0.000    0.000 __init__.py:1600(getEffectiveLevel)
+        1    0.000    0.000    0.000    0.000 copy.py:252(_keep_alive)
+        1    0.000    0.000    0.000    0.000 threading.py:534(wait)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:859(__exit__)
+       14    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 retworkx_dagcircuit.py:34(RetworkxDAGCircuit)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1351(_get_spec)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:51(_r_long)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:403(cached)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:74(_path_stat)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:369(_get_cached)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:438(_classify_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:471(_validate_timestamp_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+        4    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
+        1    0.000    0.000    0.000    0.000 utils.py:47(is_iterable_but_not_string)
+        1    0.000    0.000    0.000    0.000 utils.py:52(is_collection)
+        1    0.000    0.000    0.000    0.000 copy.py:236(_deepcopy_dict)
+        1    0.000    0.000    0.000    0.000 weakref.py:408(__setitem__)
+        1    0.000    0.000    0.000    0.000 _weakrefset.py:81(add)
+        1    0.000    0.000    0.000    0.000 threading.py:255(_is_owned)
+        1    0.000    0.000    0.000    0.000 threading.py:1131(daemon)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1240(_get_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1272(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:321(<genexpr>)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:792(find_spec)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_split)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:855(__enter__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_path_is_mode_type)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        4    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 schema.py:414(set_class)
+        1    0.000    0.000    0.000    0.000 schema.py:908(_normalize_nested_options)
+        1    0.000    0.000    0.000    0.000 threading.py:249(_release_save)
+        1    0.000    0.000    0.000    0.000 threading.py:499(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:1225(current_thread)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:884(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:951(path_stats)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1203(_path_importer_cache)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:369(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:93(_path_isfile)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:401(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        3    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 schema.py:990(<listcomp>)
+        1    0.000    0.000    0.000    0.000 schema.py:1003(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 fields.py:554(<listcomp>)
+        1    0.000    0.000    0.000    0.000 threading.py:252(_acquire_restore)
+        1    0.000    0.000    0.000    0.000 threading.py:1116(daemon)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:909(get_filename)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:307(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:311(__enter__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:424(has_location)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:719(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:40(_relax_case)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        1    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        3    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        1    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 threading.py:507(is_set)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:719(create_module)
+
+
+IMAGE COMPLETED: 1 of 4
+filter completed in 35.4845404624939 s
+filter completed in 35.86856007575989 s
+         36660244 function calls (36658284 primitive calls) in 71.353 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   137200    8.993    0.000   25.163    0.000 dagcircuit.py:292(apply_operation_back)
+      784    6.731    0.009    6.731    0.009 {method 'acquire' of '_thread.lock' objects}
+   548800    2.939    0.000    7.953    0.000 copy.py:66(copy)
+  3958024    2.777    0.000    2.798    0.000 {built-in method builtins.isinstance}
+  2467052    1.748    0.000    1.748    0.000 bit.py:75(__hash__)
+   137592    1.640    0.000    3.028    0.000 quantumcircuit.py:581(_update_parameter_table)
+   551544    1.510    0.000    5.438    0.000 {built-in method builtins.all}
+   984312    1.493    0.000    2.731    0.000 retworkx_dagcircuit.py:62(_add_multi_graph_edge)
+   489020    1.470    0.000    2.182    0.000 register.py:98(__repr__)
+   137200    1.464    0.000    2.674    0.000 assemble_circuits.py:71(<listcomp>)
+  2273992    1.336    0.000    1.336    0.000 {built-in method builtins.hasattr}
+   274400    1.333    0.000    2.728    0.000 copy.py:268(_reconstruct)
+  1970584    1.332    0.000    1.332    0.000 register.py:74(name)
+  1967056    1.320    0.000    1.320    0.000 bit.py:49(register)
+   984312    1.238    0.000    1.238    0.000 {method 'add_edge' of 'retworkx.PyDAG' objects}
+   115444    1.222    0.000    2.257    0.000 instruction.py:209(<listcomp>)
+   628180    1.217    0.000    2.594    0.000 quantumcircuit.py:644(<genexpr>)
+   574672    1.155    0.000    1.916    0.000 dagnode.py:104(__hash__)
+   490588    1.144    0.000    2.468    0.000 retworkx_dagcircuit.py:120(predecessors)
+   489020    1.133    0.000    3.315    0.000 bit.py:71(__repr__)
+   143472    1.037    0.000    4.467    0.000 dagnode.py:34(__init__)
+     1568    1.003    0.001    4.499    0.003 dagcircuit.py:1237(collect_runs)
+  1474900    0.983    0.000    0.983    0.000 bit.py:60(index)
+   137200    0.971    0.000    3.507    0.000 instruction.py:203(assemble)
+   490588    0.908    0.000    0.908    0.000 {method 'predecessors' of 'retworkx.PyDAG' objects}
+     1960    0.888    0.000    1.368    0.001 {lexicographical_topological_sort}
+   137592    0.858    0.000   11.860    0.000 quantumcircuit.py:549(_append)
+   274400    0.825    0.000    8.778    0.000 instruction.py:292(__deepcopy__)
+   628180    0.773    0.000    1.094    0.000 quantumcircuit.py:642(<genexpr>)
+   137592    0.749    0.000    1.277    0.000 quantumcircuit.py:634(_check_dups)
+   137592    0.741    0.000    5.517    0.000 quantumcircuit.py:640(_check_qargs)
+   492156    0.725    0.000    1.047    0.000 quantumcircuit.py:227(has_register)
+   412776    0.674    0.000    1.106    0.000 _collections_abc.py:879(__iter__)
+   274400    0.673    0.000    1.017    0.000 dagcircuit.py:246(_check_bits)
+   490588    0.671    0.000    0.671    0.000 {method 'remove_edge' of 'retworkx.PyDAG' objects}
+      392    0.661    0.002   17.542    0.045 dag_to_circuit.py:19(dag_to_circuit)
+      392    0.647    0.002    7.974    0.020 assemble_circuits.py:22(_assemble_circuit)
+   580944    0.642    0.000    0.642    0.000 {built-in method builtins.getattr}
+   862792    0.626    0.000    0.626    0.000 {method 'get' of 'dict' objects}
+   808892    0.560    0.000    0.560    0.000 {built-in method builtins.len}
+   137200    0.553    0.000    5.490    0.000 dagcircuit.py:275(_add_op_node)
+   687960    0.525    0.000    0.525    0.000 dagcircuit.py:742(<genexpr>)
+      392    0.495    0.001   31.132    0.079 circuit_to_dag.py:20(circuit_to_dag)
+   717360    0.480    0.000    0.480    0.000 retworkx_dagcircuit.py:109(_key)
+   274400    0.460    0.000    0.672    0.000 copyreg.py:87(__newobj__)
+   274400    0.453    0.000    9.231    0.000 instruction.py:274(copy)
+   516852    0.438    0.000    0.438    0.000 {built-in method builtins.iter}
+   412776    0.432    0.000    0.432    0.000 quantumcircuitdata.py:31(__getitem__)
+   274400    0.426    0.000    0.426    0.000 {method '__reduce_ex__' of 'object' objects}
+   582120    0.393    0.000    0.393    0.000 {built-in method builtins.hash}
+   582904    0.382    0.000    0.382    0.000 {built-in method builtins.id}
+   137592    0.371    0.000    0.988    0.000 quantumcircuit.py:647(_check_cargs)
+   492940    0.364    0.000    0.364    0.000 register.py:86(size)
+   490588    0.351    0.000    0.351    0.000 {method 'index' of 'list' objects}
+      784    0.338    0.000    0.652    0.001 dagcircuit.py:961(op_nodes)
+   275968    0.325    0.000    0.325    0.000 {method 'update' of 'dict' objects}
+   480200    0.317    0.000    0.317    0.000 {method 'append' of 'list' objects}
+   143472    0.294    0.000    0.513    0.000 retworkx_dagcircuit.py:50(_add_multi_graph_node)
+   390236    0.260    0.000    0.260    0.000 instruction.py:132(params)
+   274400    0.239    0.000    0.239    0.000 {method 'copy' of 'list' objects}
+   274400    0.233    0.000    0.233    0.000 dagnode.py:61(op)
+   143472    0.219    0.000    0.219    0.000 {method 'add_node' of 'retworkx.PyDAG' objects}
+   274792    0.212    0.000    0.212    0.000 {built-in method __new__ of type object at 0x7f166b450240}
+   274400    0.198    0.000    0.198    0.000 {built-in method builtins.issubclass}
+   137592    0.182    0.000    0.485    0.000 assemble_circuits.py:60(<genexpr>)
+      784    0.150    0.000    0.150    0.000 {dag_longest_path_length}
+     7448    0.147    0.000    0.254    0.000 inspect.py:2879(_bind)
+   137592    0.135    0.000    0.136    0.000 {method 'union' of 'set' objects}
+   137200    0.121    0.000    0.121    0.000 qasm_qobj.py:41(__init__)
+     7448    0.106    0.000    0.347    0.000 inspect.py:2117(_signature_from_function)
+   137200    0.104    0.000    0.104    0.000 dagnode.py:72(qargs)
+      392    0.104    0.000    0.316    0.001 unroller.py:39(run)
+   137200    0.103    0.000    0.103    0.000 dagcircuit.py:264(_bits_in_condition)
+   139160    0.100    0.000    0.101    0.000 quantumcircuit.py:649(<genexpr>)
+   139160    0.099    0.000    0.106    0.000 quantumcircuit.py:651(<genexpr>)
+   137200    0.099    0.000    0.099    0.000 dagcircuit.py:232(_check_condition)
+      392    0.096    0.000   54.543    0.139 passmanager.py:257(_run_single_circuit)
+        2    0.089    0.045   71.353   35.677 quantum_pipe.py:86(conv)
+     1568    0.086    0.000    0.574    0.000 {built-in method builtins.any}
+     7448    0.072    0.000    0.512    0.000 inspect.py:2198(_signature_from_callable)
+     7448    0.064    0.000    0.921    0.000 basepasses.py:35(_freeze_init_parameters)
+    13720    0.060    0.000    0.120    0.000 inspect.py:2467(__init__)
+     7448    0.051    0.000    1.012    0.000 basepasses.py:30(__call__)
+    19796    0.051    0.000    0.171    0.000 gate.py:85(assemble)
+     3136    0.048    0.000    0.123    0.000 dagcircuit.py:202(_add_wire)
+     3920    0.045    0.000    5.639    0.001 runningpassmanager.py:152(_run_this_pass)
+    12544    0.043    0.000    0.070    0.000 register.py:106(__getitem__)
+     7448    0.041    0.000    0.079    0.000 inspect.py:2750(__init__)
+      784    0.039    0.000    2.409    0.003 cx_cancellation.py:23(run)
+     6272    0.037    0.000    0.136    0.000 postprocess.py:48(format_counts_memory)
+     1960    0.034    0.000    0.061    0.000 base.py:127(dump_additional_data)
+    41160    0.034    0.000    0.039    0.000 {built-in method builtins.next}
+     7448    0.030    0.000    0.059    0.000 inspect.py:484(unwrap)
+    40768    0.029    0.000    0.029    0.000 inspect.py:2517(name)
+    21168    0.028    0.000    0.038    0.000 inspect.py:2799(<genexpr>)
+    13720    0.028    0.000    0.040    0.000 enum.py:284(__call__)
+      784    0.027    0.000    0.027    0.000 {built-in method posix.urandom}
+      392    0.024    0.000    0.048    0.000 instruction.py:137(params)
+    14896    0.022    0.000    0.033    0.000 inspect.py:158(isfunction)
+    10196    0.021    0.000    0.021    0.000 {built-in method time.time}
+    30184    0.021    0.000    0.021    0.000 inspect.py:2529(kind)
+     3920    0.021    0.000    0.034    0.000 runningpassmanager.py:192(_log_pass)
+    11760    0.021    0.000    0.074    0.000 register.py:132(__iter__)
+     8624    0.021    0.000    0.047    0.000 retworkx_dagcircuit.py:116(successors)
+     3920    0.020    0.000    5.705    0.001 runningpassmanager.py:125(_do_pass)
+    13328    0.020    0.000    0.029    0.000 transpile.py:371(<genexpr>)
+     6272    0.020    0.000    0.029    0.000 postprocess.py:38(_separate_bitstring)
+     8624    0.019    0.000    0.019    0.000 {method 'successors' of 'retworkx.PyDAG' objects}
+      392    0.019    0.000    1.044    0.003 level1.py:49(level_1_pass_manager)
+    21560    0.018    0.000    0.018    0.000 {method 'startswith' of 'str' objects}
+      784    0.017    0.000    0.017    0.000 {is_directed_acyclic_graph}
+     6272    0.017    0.000    0.035    0.000 postprocess.py:32(_pad_zeros)
+     7448    0.017    0.000    0.271    0.000 inspect.py:3010(bind)
+     7448    0.017    0.000    0.017    0.000 basepasses.py:54(__init__)
+     3920    0.017    0.000    0.043    0.000 runningpassmanager.py:197(_update_valid_passes)
+      392    0.016    0.000   54.416    0.139 runningpassmanager.py:95(run)
+     6272    0.015    0.000    0.021    0.000 postprocess.py:22(_hex_to_bin)
+     3920    0.015    0.000    0.137    0.000 fields.py:287(serialize)
+1960/1176    0.015    0.000    0.151    0.000 schema.py:501(_serialize)
+     7448    0.014    0.000    0.540    0.000 inspect.py:3081(signature)
+     7448    0.014    0.000    0.526    0.000 inspect.py:2829(from_callable)
+     3920    0.014    0.000    0.079    0.000 schema.py:1192(_invoke_processors)
+1960/1176    0.014    0.000    0.195    0.000 schema.py:527(dump)
+    19796    0.014    0.000    0.014    0.000 gate.py:92(label)
+     2352    0.013    0.000    0.087    0.000 quantumcircuit.py:429(<listcomp>)
+     7056    0.013    0.000    0.019    0.000 {method 'add' of 'set' objects}
+    13720    0.012    0.000    0.012    0.000 enum.py:526(__new__)
+     7448    0.012    0.000    0.017    0.000 inspect.py:504(_is_wrapper)
+     7056    0.011    0.000    0.021    0.000 abc.py:137(__instancecheck__)
+      392    0.011    0.000   63.865    0.163 execute.py:40(execute)
+    13720    0.011    0.000    0.011    0.000 {method 'isidentifier' of 'str' objects}
+      784    0.011    0.000    0.011    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+      392    0.011    0.000    0.043    0.000 assemble.py:166(_parse_common_args)
+      392    0.010    0.000    0.074    0.000 transpile.py:310(_parse_transpile_args)
+      392    0.010    0.000    0.010    0.000 {built-in method posix.stat}
+     5096    0.010    0.000    0.016    0.000 __init__.py:1368(info)
+     6272    0.010    0.000    0.010    0.000 {built-in method builtins.format}
+     3920    0.010    0.000    0.028    0.000 utils.py:213(get_value)
+     3920    0.010    0.000    0.048    0.000 fields.py:209(get_value)
+     7056    0.010    0.000    0.010    0.000 {built-in method _abc._abc_instancecheck}
+     6272    0.010    0.000    0.010    0.000 {method 'item' of 'numpy.generic' objects}
+     3528    0.009    0.000    0.019    0.000 runningpassmanager.py:305(__iter__)
+     1176    0.009    0.000    0.021    0.000 result.py:247(_get_experiment)
+      392    0.009    0.000   55.742    0.142 transpile.py:42(transpile)
+      784    0.009    0.000    0.009    0.000 {method 'nodes' of 'retworkx.PyDAG' objects}
+     3920    0.009    0.000    0.015    0.000 utils.py:239(_get_value_for_key)
+      392    0.009    0.000    0.067    0.000 initializer.py:44(__init__)
+      784    0.008    0.000    0.012    0.000 uuid.py:121(__init__)
+      392    0.008    0.000    0.144    0.000 postprocess.py:157(format_counts)
+     5488    0.008    0.000    0.014    0.000 basepasses.py:90(is_analysis_pass)
+      392    0.008    0.000   55.598    0.142 transpile.py:255(_transpile_circuit)
+    10976    0.008    0.000    0.008    0.000 {built-in method builtins.callable}
+     6272    0.008    0.000    0.008    0.000 {method 'format' of 'str' objects}
+     7448    0.008    0.000    0.008    0.000 {method 'values' of 'mappingproxy' objects}
+      392    0.008    0.000    7.989    0.020 assemble_circuits.py:113(assemble_circuits)
+     7840    0.007    0.000    0.007    0.000 basepasses.py:60(__hash__)
+     1960    0.007    0.000    0.086    0.000 schema.py:1057(_invoke_dump_processors)
+     1960    0.007    0.000    1.377    0.001 retworkx_dagcircuit.py:102(topological_nodes)
+     7448    0.007    0.000    0.007    0.000 inspect.py:2609(__init__)
+      392    0.007    0.000    0.083    0.000 dagcircuit.py:182(add_qreg)
+1568/1176    0.007    0.000    0.013    0.000 runningpassmanager.py:259(controller_factory)
+      392    0.007    0.000    8.057    0.021 assemble.py:43(assemble)
+      392    0.007    0.000    0.374    0.001 result.py:160(get_counts)
+      392    0.007    0.000    0.016    0.000 quantum_pipe.py:133(shannon_entropy)
+      784    0.007    0.000    0.032    0.000 <__array_function__ internals>:2(sum)
+     3920    0.007    0.000    0.035    0.000 schema.py:469(get_attribute)
+      784    0.006    0.000   63.580    0.081 parallel.py:72(parallel_map)
+     5096    0.006    0.000    0.006    0.000 __init__.py:1614(isEnabledFor)
+     3920    0.006    0.000    0.010    0.000 basepasses.py:81(is_transformation_pass)
+      392    0.006    0.000    0.025    0.000 quantumcircuit.py:137(__init__)
+      784    0.006    0.000    0.014    0.000 fixed_point.py:39(run)
+     1568    0.006    0.000    0.010    0.000 assemble_circuits.py:75(<listcomp>)
+      392    0.006    0.000    0.127    0.000 quantumcircuit.py:524(append)
+      392    0.006    0.000    0.016    0.000 dagcircuit.py:59(__new__)
+     1960    0.006    0.000    1.383    0.001 dagcircuit.py:735(topological_op_nodes)
+      392    0.006    0.000    0.016    0.000 thread.py:145(submit)
+      784    0.006    0.000    0.006    0.000 {built-in method builtins.repr}
+     7448    0.006    0.000    0.006    0.000 {built-in method sys.getrecursionlimit}
+      392    0.006    0.000    0.074    0.000 dagcircuit.py:192(add_creg)
+     7448    0.006    0.000    0.006    0.000 {method 'items' of 'collections.OrderedDict' objects}
+      392    0.006    0.000    6.747    0.017 _base.py:408(result)
+      392    0.006    0.000    0.006    0.000 quantum_pipe.py:123(<listcomp>)
+      392    0.006    0.000    0.011    0.000 quantumcircuit.py:605(add_register)
+     7448    0.006    0.000    0.006    0.000 inspect.py:2835(parameters)
+      392    0.005    0.000    0.016    0.000 quantum_pipe.py:113(encoding_function)
+      784    0.005    0.000    2.158    0.003 optimize_1q_gates.py:47(run)
+     6272    0.005    0.000    0.005    0.000 {built-in method builtins.bin}
+     1176    0.005    0.000    0.023    0.000 runningpassmanager.py:61(append)
+     1568    0.005    0.000    0.068    0.000 quantumcircuit.py:498(qbit_argument_conversion)
+     2352    0.005    0.000    0.092    0.000 quantumcircuit.py:424(qubits)
+     6664    0.005    0.000    0.005    0.000 {method 'join' of 'str' objects}
+      784    0.005    0.000    0.045    0.000 uuid.py:759(uuid4)
+     3920    0.005    0.000    0.005    0.000 basepasses.py:66(name)
+     5488    0.005    0.000    0.005    0.000 runningpassmanager.py:217(__iter__)
+     1568    0.005    0.000    0.007    0.000 fencedobjs.py:65(__init__)
+      784    0.005    0.000    0.017    0.000 fromnumeric.py:73(_wrapreduction)
+     2352    0.005    0.000    0.005    0.000 schema.py:1053(_has_processors)
+      392    0.005    0.000    6.738    0.017 threading.py:264(wait)
+      784    0.005    0.000    0.007    0.000 copy.py:132(deepcopy)
+      392    0.004    0.000    0.021    0.000 transpile.py:228(_check_circuits_coupling_map)
+      784    0.004    0.000    0.023    0.000 fromnumeric.py:2092(sum)
+      392    0.004    0.000    0.046    0.000 aerbackend.py:86(run)
+      784    0.004    0.000    0.009    0.000 os.py:674(__getitem__)
+      392    0.004    0.000    0.004    0.000 {built-in method builtins.sum}
+     2352    0.004    0.000    0.006    0.000 result.py:278(<genexpr>)
+      784    0.004    0.000    0.004    0.000 uuid.py:266(__str__)
+      784    0.004    0.000    0.171    0.000 dagcircuit.py:602(depth)
+     5488    0.004    0.000    0.004    0.000 {method 'items' of 'dict' objects}
+     1176    0.004    0.000    0.007    0.000 passmanager.py:162(_normalize_passes)
+      786    0.004    0.000    0.004    0.000 {built-in method numpy.zeros}
+     1176    0.004    0.000    0.012    0.000 passmanager.py:68(append)
+     1176    0.004    0.000    0.199    0.000 base.py:332(to_dict)
+      392    0.004    0.000    0.045    0.000 transpile.py:364(_parse_basis_gates)
+      392    0.003    0.000    0.005    0.000 retworkx_dagcircuit.py:43(__init__)
+      784    0.003    0.000    0.180    0.000 depth.py:23(run)
+     2352    0.003    0.000    0.003    0.000 {method 'intersection_update' of 'set' objects}
+      392    0.003    0.000    0.006    0.000 assemble.py:302(_parse_circuit_args)
+      392    0.003    0.000    0.030    0.000 passmanager.py:220(_create_running_passmanager)
+     1176    0.003    0.000    0.005    0.000 quantumcircuit.py:171(data)
+      784    0.003    0.000    0.005    0.000 fencedobjs.py:28(__getattribute__)
+      784    0.003    0.000    0.069    0.000 fields.py:559(_serialize)
+     1176    0.003    0.000    0.004    0.000 runningpassmanager.py:87(_normalize_flow_controller)
+      784    0.003    0.000    0.004    0.000 fencedobjs.py:32(__getitem__)
+      392    0.003    0.000    0.005    0.000 transpile.py:250(_log_transpile_time)
+      392    0.003    0.000    0.197    0.001 initializer.py:250(initialize)
+     1568    0.003    0.000    0.004    0.000 quantumcircuit.py:462(_bit_argument_conversion)
+      392    0.003    0.000    0.051    0.000 instruction.py:53(__init__)
+      784    0.003    0.000    0.011    0.000 _collections_abc.py:657(get)
+     1960    0.003    0.000    0.003    0.000 fencedobjs.py:24(__init__)
+      392    0.003    0.000    0.003    0.000 parametertable.py:27(__init__)
+      784    0.003    0.000    0.183    0.000 result.py:57(data)
+      392    0.003    0.000    0.003    0.000 threading.py:216(__init__)
+      392    0.003    0.000    0.022    0.000 user_config.py:98(get_config)
+      392    0.002    0.000    0.006    0.000 _base.py:312(__init__)
+      392    0.002    0.000    0.005    0.000 transpile.py:377(_parse_coupling_map)
+      784    0.002    0.000    0.004    0.000 os.py:752(encode)
+      392    0.002    0.000    0.070    0.000 quantumcircuit.py:541(<listcomp>)
+      392    0.002    0.000    0.004    0.000 execute.py:34(_log_submission_time)
+      392    0.002    0.000   54.545    0.139 passmanager.py:172(run)
+      784    0.002    0.000    0.012    0.000 retworkx_dagcircuit.py:59(_get_multi_graph_nodes)
+      392    0.002    0.000    0.002    0.000 {method 'put' of '_queue.SimpleQueue' objects}
+      392    0.002    0.000    0.004    0.000 runningpassmanager.py:35(__init__)
+     1568    0.002    0.000    0.002    0.000 fencedobjs.py:40(_check_if_fenced)
+     1176    0.002    0.000    0.002    0.000 quantumcircuitdata.py:28(__init__)
+      784    0.002    0.000    0.025    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+     1960    0.002    0.000    0.002    0.000 schema.py:410(dict_class)
+      392    0.002    0.000    0.018    0.000 aerjob.py:61(submit)
+     1176    0.002    0.000    0.003    0.000 qasm_qobj.py:325(__init__)
+      392    0.002    0.000    0.002    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+     1568    0.002    0.000    0.002    0.000 basebackend.py:57(configuration)
+      784    0.002    0.000    0.006    0.000 level1.py:145(_opt_control)
+      392    0.002    0.000    0.003    0.000 aerjob.py:54(__init__)
+      392    0.002    0.000    0.002    0.000 dagcircuit.py:67(__init__)
+      392    0.002    0.000    0.002    0.000 quantumcircuit.py:212(_increment_instances)
+      784    0.002    0.000    0.003    0.000 initializer.py:240(broadcast_arguments)
+      392    0.002    0.000    0.004    0.000 transpile.py:407(_parse_initial_layout)
+      392    0.002    0.000    0.003    0.000 instructionset.py:43(add)
+     1176    0.002    0.000    0.002    0.000 runningpassmanager.py:291(__init__)
+      392    0.002    0.000    0.003    0.000 assemble.py:37(_log_assembly_time)
+      392    0.002    0.000    0.003    0.000 set_layout.py:28(__init__)
+      392    0.002    0.000    0.003    0.000 transpile.py:397(_parse_backend_properties)
+      392    0.002    0.000    0.003    0.000 stochastic_swap.py:52(__init__)
+      784    0.002    0.000    0.002    0.000 {built-in method from_bytes}
+      392    0.002    0.000    0.003    0.000 dense_layout.py:39(__init__)
+      392    0.002    0.000    0.008    0.000 os.py:770(getenv)
+      392    0.002    0.000    6.750    0.017 aerjob.py:37(_wrapper)
+      784    0.001    0.000    0.001    0.000 qasm_qobj.py:251(__init__)
+      392    0.001    0.000    0.001    0.000 {method 'astype' of 'numpy.ndarray' objects}
+      392    0.001    0.000    0.004    0.000 runningpassmanager.py:299(__init__)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:138(<listcomp>)
+      392    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:416(parent)
+      392    0.001    0.000    6.749    0.017 aerjob.py:76(result)
+      784    0.001    0.000    0.001    0.000 {method 'encode' of 'str' objects}
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:74(<dictcomp>)
+      392    0.001    0.000    0.011    0.000 genericpath.py:27(isfile)
+      392    0.001    0.000    0.002    0.000 fencedobjs.py:58(__init__)
+      392    0.001    0.000    0.001    0.000 passmanager.py:33(__init__)
+      392    0.001    0.000    0.002    0.000 run_config.py:32(__init__)
+      392    0.001    0.000    0.002    0.000 unroller.py:29(__init__)
+      784    0.001    0.000    0.003    0.000 transpile.py:173(<genexpr>)
+      784    0.001    0.000    0.003    0.000 assemble.py:339(<genexpr>)
+      392    0.001    0.000    0.002    0.000 full_ancilla_allocation.py:36(__init__)
+      392    0.001    0.000    0.002    0.000 trivial_layout.py:34(__init__)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:1397(parameters)
+      392    0.001    0.000    0.002    0.000 layout_2q_distance.py:34(__init__)
+      392    0.001    0.000    0.002    0.000 optimize_1q_gates.py:36(__init__)
+     1568    0.001    0.000    0.001    0.000 {method 'values' of 'dict' objects}
+      392    0.001    0.000    0.002    0.000 check_map.py:28(__init__)
+      392    0.001    0.000    0.002    0.000 check_cx_direction.py:28(__init__)
+      392    0.001    0.000    0.441    0.001 remove_reset_in_zero_state.py:24(run)
+     1176    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}
+      392    0.001    0.000    0.005    0.000 assemble.py:319(_expand_parameters)
+      392    0.001    0.000    0.003    0.000 runningpassmanager.py:212(__init__)
+      392    0.001    0.000    0.002    0.000 fixed_point.py:30(__init__)
+      784    0.001    0.000    0.001    0.000 quantumcircuit.py:624(<listcomp>)
+      392    0.001    0.000    0.001    0.000 {method '_acquire_restore' of '_thread.RLock' objects}
+      392    0.001    0.000    0.001    0.000 thread.py:176(_adjust_thread_count)
+      392    0.001    0.000    0.001    0.000 {built-in method math.isclose}
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:387(__init__)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:610(<listcomp>)
+      392    0.001    0.000    0.002    0.000 cx_direction.py:38(__init__)
+      784    0.001    0.000    0.001    0.000 optimize_1q_gates.py:260(_split_runs_on_parameters)
+      392    0.001    0.000    0.001    0.000 passmanager_config.py:22(__init__)
+      784    0.001    0.000    0.001    0.000 assemble.py:136(<genexpr>)
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:2087(_sum_dispatcher)
+      392    0.001    0.000    0.001    0.000 threading.py:243(__exit__)
+      784    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+      392    0.001    0.000    0.001    0.000 transpile.py:473(_parse_output_name)
+      784    0.001    0.000    0.001    0.000 {method 'count' of 'list' objects}
+      392    0.001    0.000    0.001    0.000 basejob.py:33(__init__)
+      392    0.001    0.000    0.001    0.000 threading.py:240(__enter__)
+      392    0.001    0.000    0.001    0.000 transpile.py:392(<listcomp>)
+      784    0.001    0.000    0.001    0.000 fields.py:499(schema)
+      392    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+      392    0.001    0.000    0.001    0.000 instructionset.py:25(__init__)
+      392    0.001    0.000    0.001    0.000 {built-in method math.log2}
+      392    0.001    0.000    0.001    0.000 transpile.py:431(<listcomp>)
+      392    0.001    0.000    0.001    0.000 transpile.py:437(_parse_layout_method)
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:176(__init__)
+      784    0.001    0.000    0.001    0.000 transpile.py:230(<genexpr>)
+      392    0.001    0.000    0.001    0.000 transpile.py:443(_parse_routing_method)
+      392    0.001    0.000    0.001    0.000 transpile.py:467(_parse_callback)
+      392    0.001    0.000    0.001    0.000 threading.py:75(RLock)
+      784    0.001    0.000    0.001    0.000 {method 'values' of 'collections.OrderedDict' objects}
+      392    0.001    0.000    0.001    0.000 transpile.py:449(_parse_seed_transpiler)
+      392    0.001    0.000    0.001    0.000 transpile.py:455(_parse_optimization_level)
+      392    0.001    0.000    0.001    0.000 thread.py:46(__init__)
+      392    0.001    0.000    0.001    0.000 initializer.py:241(<listcomp>)
+      392    0.001    0.000    0.001    0.000 assemble.py:314(<dictcomp>)
+      784    0.001    0.000    0.001    0.000 propertyset.py:22(__missing__)
+      784    0.001    0.000    0.001    0.000 copy.py:190(_deepcopy_atomic)
+      392    0.001    0.000    0.001    0.000 _base.py:382(__get_result)
+      392    0.001    0.000    0.001    0.000 {method 'rpartition' of 'str' objects}
+      392    0.001    0.000    0.001    0.000 {method '_release_save' of '_thread.RLock' objects}
+      392    0.001    0.000    0.001    0.000 assemble.py:206(<dictcomp>)
+      392    0.001    0.000    0.001    0.000 {method '__enter__' of '_thread.RLock' objects}
+      392    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+      392    0.000    0.000    0.000    0.000 parametertable.py:55(get_keys)
+      392    0.000    0.000    0.000    0.000 {method 'is_integer' of 'float' objects}
+      392    0.000    0.000    0.000    0.000 transpile.py:499(<listcomp>)
+      392    0.000    0.000    0.000    0.000 parametertable.py:34(<genexpr>)
+      392    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+      392    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+      392    0.000    0.000    0.000    0.000 run_config.py:72(to_dict)
+      392    0.000    0.000    0.000    0.000 quantumcircuit.py:542(<listcomp>)
+      392    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+      392    0.000    0.000    0.000    0.000 {method 'keys' of 'collections.OrderedDict' objects}
+      392    0.000    0.000    0.000    0.000 basebackend.py:65(properties)
+      392    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+      392    0.000    0.000    0.000    0.000 {method '_is_owned' of '_thread.RLock' objects}
+      392    0.000    0.000    0.000    0.000 transpile.py:410(_layout_from_raw)
+        1    0.000    0.000   71.353   71.353 quantum_process.py:37(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+IMAGE COMPLETED: 2 of 4
+filter completed in 50.8798770904541 s
+filter completed in 51.3638060092926 s
+         57942708 function calls (57940748 primitive calls) in 102.244 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   214032   15.435    0.000   41.346    0.000 dagcircuit.py:292(apply_operation_back)
+      784    9.385    0.012    9.385    0.012 {method 'acquire' of '_thread.lock' objects}
+   856128    4.069    0.000   11.286    0.000 copy.py:66(copy)
+  6339816    3.537    0.000    3.558    0.000 {built-in method builtins.isinstance}
+  4003692    2.691    0.000    2.691    0.000 bit.py:75(__hash__)
+  1598968    2.394    0.000    4.370    0.000 retworkx_dagcircuit.py:62(_add_multi_graph_edge)
+   796348    2.361    0.000    3.510    0.000 register.py:98(__repr__)
+   428064    2.121    0.000    4.062    0.000 copy.py:268(_reconstruct)
+  3199896    2.078    0.000    2.078    0.000 register.py:74(name)
+   214032    2.016    0.000    3.678    0.000 assemble_circuits.py:71(<listcomp>)
+   214424    2.011    0.000    3.729    0.000 quantumcircuit.py:581(_update_parameter_table)
+  1598968    1.976    0.000    1.976    0.000 {method 'add_edge' of 'retworkx.PyDAG' objects}
+  3196368    1.936    0.000    1.936    0.000 bit.py:49(register)
+  3733800    1.856    0.000    1.856    0.000 {built-in method builtins.hasattr}
+   858872    1.849    0.000    6.711    0.000 {built-in method builtins.all}
+   797916    1.837    0.000    4.036    0.000 retworkx_dagcircuit.py:120(predecessors)
+   796348    1.822    0.000    5.332    0.000 bit.py:71(__repr__)
+   192276    1.724    0.000    3.176    0.000 instruction.py:209(<listcomp>)
+   220304    1.620    0.000    7.128    0.000 dagnode.py:34(__init__)
+   882000    1.620    0.000    2.691    0.000 dagnode.py:104(__hash__)
+  2396884    1.512    0.000    1.512    0.000 bit.py:60(index)
+  1012340    1.508    0.000    3.212    0.000 quantumcircuit.py:644(<genexpr>)
+   797916    1.447    0.000    1.447    0.000 {method 'predecessors' of 'retworkx.PyDAG' objects}
+     1568    1.377    0.001    6.272    0.004 dagcircuit.py:1237(collect_runs)
+     1960    1.231    0.001    1.910    0.001 {lexicographical_topological_sort}
+   428064    1.135    0.000   12.421    0.000 instruction.py:292(__deepcopy__)
+   797916    1.073    0.000    1.073    0.000 {method 'remove_edge' of 'retworkx.PyDAG' objects}
+   428064    1.065    0.000    1.621    0.000 dagcircuit.py:246(_check_bits)
+   214424    1.027    0.000   14.547    0.000 quantumcircuit.py:549(_append)
+  1012340    0.966    0.000    1.370    0.000 quantumcircuit.py:642(<genexpr>)
+   214032    0.956    0.000    4.507    0.000 instruction.py:203(assemble)
+   643272    0.939    0.000    1.531    0.000 _collections_abc.py:879(__iter__)
+   214424    0.920    0.000    1.581    0.000 quantumcircuit.py:634(_check_dups)
+   799484    0.892    0.000    1.291    0.000 quantumcircuit.py:227(has_register)
+   214424    0.877    0.000    6.801    0.000 quantumcircuit.py:640(_check_qargs)
+  1323784    0.860    0.000    0.860    0.000 {method 'get' of 'dict' objects}
+   214032    0.858    0.000    8.722    0.000 dagcircuit.py:275(_add_op_node)
+   888272    0.857    0.000    0.857    0.000 {built-in method builtins.getattr}
+  1269884    0.811    0.000    0.811    0.000 {built-in method builtins.len}
+      392    0.805    0.002   21.687    0.055 dag_to_circuit.py:19(dag_to_circuit)
+      392    0.794    0.002   10.389    0.027 assemble_circuits.py:22(_assemble_circuit)
+   824180    0.773    0.000    0.773    0.000 {built-in method builtins.iter}
+      392    0.764    0.002   50.509    0.129 circuit_to_dag.py:20(circuit_to_dag)
+  1072120    0.723    0.000    0.723    0.000 dagcircuit.py:742(<genexpr>)
+  1101520    0.678    0.000    0.678    0.000 retworkx_dagcircuit.py:109(_key)
+   428064    0.642    0.000    0.937    0.000 copyreg.py:87(__newobj__)
+   428064    0.631    0.000   13.051    0.000 instruction.py:274(copy)
+   643272    0.592    0.000    0.592    0.000 quantumcircuitdata.py:31(__getitem__)
+   800268    0.585    0.000    0.585    0.000 register.py:86(size)
+   428064    0.580    0.000    0.580    0.000 {method '__reduce_ex__' of 'object' objects}
+   889448    0.549    0.000    0.549    0.000 {built-in method builtins.hash}
+   890232    0.535    0.000    0.535    0.000 {built-in method builtins.id}
+      784    0.513    0.001    0.988    0.001 dagcircuit.py:961(op_nodes)
+   797916    0.466    0.000    0.466    0.000 {method 'index' of 'list' objects}
+   429632    0.451    0.000    0.451    0.000 {method 'update' of 'dict' objects}
+   220304    0.448    0.000    0.780    0.000 retworkx_dagcircuit.py:50(_add_multi_graph_node)
+   214424    0.432    0.000    1.175    0.000 quantumcircuit.py:647(_check_cargs)
+   710696    0.407    0.000    0.407    0.000 {method 'append' of 'list' objects}
+   428064    0.345    0.000    0.345    0.000 {method 'copy' of 'list' objects}
+   620732    0.341    0.000    0.341    0.000 instruction.py:132(params)
+   220304    0.332    0.000    0.332    0.000 {method 'add_node' of 'retworkx.PyDAG' objects}
+   428064    0.318    0.000    0.318    0.000 dagnode.py:61(op)
+   428456    0.296    0.000    0.296    0.000 {built-in method __new__ of type object at 0x7f166b450240}
+   428064    0.277    0.000    0.277    0.000 {built-in method builtins.issubclass}
+   214424    0.230    0.000    0.600    0.000 assemble_circuits.py:60(<genexpr>)
+      784    0.221    0.000    0.221    0.000 {dag_longest_path_length}
+   214424    0.209    0.000    0.210    0.000 {method 'union' of 'set' objects}
+   214032    0.159    0.000    0.159    0.000 dagcircuit.py:264(_bits_in_condition)
+      392    0.157    0.000    0.476    0.001 unroller.py:39(run)
+   214032    0.157    0.000    0.157    0.000 qasm_qobj.py:41(__init__)
+   214032    0.153    0.000    0.153    0.000 dagcircuit.py:232(_check_condition)
+     7448    0.147    0.000    0.253    0.000 inspect.py:2879(_bind)
+      392    0.135    0.000   80.334    0.205 passmanager.py:257(_run_single_circuit)
+   214032    0.129    0.000    0.129    0.000 dagnode.py:72(qargs)
+   215992    0.121    0.000    0.122    0.000 quantumcircuit.py:649(<genexpr>)
+   215992    0.120    0.000    0.126    0.000 quantumcircuit.py:651(<genexpr>)
+        2    0.118    0.059  102.244   51.122 quantum_pipe.py:86(conv)
+     1568    0.107    0.000    0.710    0.000 {built-in method builtins.any}
+     7448    0.106    0.000    0.348    0.000 inspect.py:2117(_signature_from_function)
+     7448    0.072    0.000    0.513    0.000 inspect.py:2198(_signature_from_callable)
+     7448    0.064    0.000    0.922    0.000 basepasses.py:35(_freeze_init_parameters)
+    13720    0.060    0.000    0.120    0.000 inspect.py:2467(__init__)
+     7448    0.052    0.000    1.013    0.000 basepasses.py:30(__call__)
+     3136    0.048    0.000    0.123    0.000 dagcircuit.py:202(_add_wire)
+     3920    0.044    0.000    7.872    0.002 runningpassmanager.py:152(_run_this_pass)
+    12544    0.043    0.000    0.071    0.000 register.py:106(__getitem__)
+    19796    0.041    0.000    0.134    0.000 gate.py:85(assemble)
+     7448    0.041    0.000    0.079    0.000 inspect.py:2750(__init__)
+     6272    0.037    0.000    0.137    0.000 postprocess.py:48(format_counts_memory)
+      784    0.036    0.000    3.232    0.004 cx_cancellation.py:23(run)
+     1960    0.034    0.000    0.062    0.000 base.py:127(dump_additional_data)
+    41160    0.034    0.000    0.039    0.000 {built-in method builtins.next}
+     7448    0.030    0.000    0.059    0.000 inspect.py:484(unwrap)
+    40768    0.029    0.000    0.029    0.000 inspect.py:2517(name)
+    21168    0.028    0.000    0.038    0.000 inspect.py:2799(<genexpr>)
+    13720    0.028    0.000    0.040    0.000 enum.py:284(__call__)
+      784    0.026    0.000    0.026    0.000 {built-in method posix.urandom}
+      392    0.025    0.000    0.049    0.000 instruction.py:137(params)
+      784    0.024    0.000    0.024    0.000 {is_directed_acyclic_graph}
+    14896    0.022    0.000    0.033    0.000 inspect.py:158(isfunction)
+    30184    0.021    0.000    0.021    0.000 inspect.py:2529(kind)
+    11760    0.021    0.000    0.074    0.000 register.py:132(__iter__)
+     3920    0.021    0.000    0.033    0.000 runningpassmanager.py:192(_log_pass)
+    10196    0.021    0.000    0.021    0.000 {built-in method time.time}
+    13328    0.020    0.000    0.029    0.000 transpile.py:371(<genexpr>)
+     6272    0.020    0.000    0.029    0.000 postprocess.py:38(_separate_bitstring)
+     3920    0.020    0.000    7.936    0.002 runningpassmanager.py:125(_do_pass)
+      392    0.019    0.000    1.046    0.003 level1.py:49(level_1_pass_manager)
+     8624    0.019    0.000    0.042    0.000 retworkx_dagcircuit.py:116(successors)
+    21560    0.018    0.000    0.018    0.000 {method 'startswith' of 'str' objects}
+     8624    0.017    0.000    0.017    0.000 {method 'successors' of 'retworkx.PyDAG' objects}
+     7448    0.017    0.000    0.017    0.000 basepasses.py:54(__init__)
+     6272    0.017    0.000    0.036    0.000 postprocess.py:32(_pad_zeros)
+     7448    0.017    0.000    0.270    0.000 inspect.py:3010(bind)
+     3920    0.016    0.000    0.041    0.000 runningpassmanager.py:197(_update_valid_passes)
+      392    0.016    0.000   80.168    0.205 runningpassmanager.py:95(run)
+     3920    0.016    0.000    0.138    0.000 fields.py:287(serialize)
+     6272    0.016    0.000    0.021    0.000 postprocess.py:22(_hex_to_bin)
+1960/1176    0.015    0.000    0.153    0.000 schema.py:501(_serialize)
+     3920    0.014    0.000    0.080    0.000 schema.py:1192(_invoke_processors)
+1960/1176    0.014    0.000    0.198    0.000 schema.py:527(dump)
+     7448    0.014    0.000    0.541    0.000 inspect.py:3081(signature)
+     7448    0.014    0.000    0.527    0.000 inspect.py:2829(from_callable)
+     2352    0.014    0.000    0.088    0.000 quantumcircuit.py:429(<listcomp>)
+     7056    0.013    0.000    0.019    0.000 {method 'add' of 'set' objects}
+    13720    0.012    0.000    0.012    0.000 enum.py:526(__new__)
+      784    0.012    0.000    0.012    0.000 {method 'nodes' of 'retworkx.PyDAG' objects}
+     7448    0.011    0.000    0.017    0.000 inspect.py:504(_is_wrapper)
+    19796    0.011    0.000    0.011    0.000 gate.py:92(label)
+      392    0.011    0.000    0.011    0.000 {built-in method posix.stat}
+     7056    0.011    0.000    0.021    0.000 abc.py:137(__instancecheck__)
+      784    0.011    0.000    0.011    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    13720    0.011    0.000    0.011    0.000 {method 'isidentifier' of 'str' objects}
+      392    0.011    0.000    0.076    0.000 transpile.py:310(_parse_transpile_args)
+      392    0.010    0.000   92.064    0.235 execute.py:40(execute)
+     6272    0.010    0.000    0.010    0.000 {built-in method builtins.format}
+     3920    0.010    0.000    0.028    0.000 utils.py:213(get_value)
+     7056    0.010    0.000    0.010    0.000 {built-in method _abc._abc_instancecheck}
+     3920    0.010    0.000    0.048    0.000 fields.py:209(get_value)
+     1176    0.010    0.000    0.022    0.000 result.py:247(_get_experiment)
+     6272    0.010    0.000    0.010    0.000 {method 'item' of 'numpy.generic' objects}
+     5096    0.010    0.000    0.016    0.000 __init__.py:1368(info)
+      392    0.009    0.000    0.039    0.000 assemble.py:166(_parse_common_args)
+      392    0.009    0.000   81.538    0.208 transpile.py:42(transpile)
+     3528    0.009    0.000    0.018    0.000 runningpassmanager.py:305(__iter__)
+     3920    0.009    0.000    0.015    0.000 utils.py:239(_get_value_for_key)
+      392    0.009    0.000    0.068    0.000 initializer.py:44(__init__)
+      392    0.009    0.000    0.146    0.000 postprocess.py:157(format_counts)
+      392    0.008    0.000   81.391    0.208 transpile.py:255(_transpile_circuit)
+     6272    0.008    0.000    0.008    0.000 {method 'format' of 'str' objects}
+    10976    0.008    0.000    0.008    0.000 {built-in method builtins.callable}
+     5488    0.008    0.000    0.014    0.000 basepasses.py:90(is_analysis_pass)
+     7448    0.008    0.000    0.008    0.000 {method 'values' of 'mappingproxy' objects}
+      784    0.008    0.000    0.011    0.000 uuid.py:121(__init__)
+     1960    0.007    0.000    0.087    0.000 schema.py:1057(_invoke_dump_processors)
+     7840    0.007    0.000    0.007    0.000 basepasses.py:60(__hash__)
+     7448    0.007    0.000    0.007    0.000 inspect.py:2609(__init__)
+      392    0.007    0.000   10.402    0.027 assemble_circuits.py:113(assemble_circuits)
+      392    0.007    0.000    0.380    0.001 result.py:160(get_counts)
+1568/1176    0.007    0.000    0.013    0.000 runningpassmanager.py:259(controller_factory)
+     3920    0.007    0.000    0.035    0.000 schema.py:469(get_attribute)
+     1960    0.007    0.000    1.918    0.001 retworkx_dagcircuit.py:102(topological_nodes)
+      784    0.007    0.000    0.033    0.000 <__array_function__ internals>:2(sum)
+      392    0.007    0.000    0.083    0.000 dagcircuit.py:182(add_qreg)
+      392    0.007    0.000    0.016    0.000 quantum_pipe.py:133(shannon_entropy)
+      392    0.006    0.000    0.128    0.000 quantumcircuit.py:524(append)
+     3920    0.006    0.000    0.010    0.000 basepasses.py:81(is_transformation_pass)
+     5096    0.006    0.000    0.006    0.000 __init__.py:1614(isEnabledFor)
+      784    0.006    0.000   91.787    0.117 parallel.py:72(parallel_map)
+      784    0.006    0.000    0.006    0.000 {built-in method builtins.repr}
+      784    0.006    0.000    0.013    0.000 fixed_point.py:39(run)
+      392    0.006    0.000    0.016    0.000 dagcircuit.py:59(__new__)
+      784    0.006    0.000    3.103    0.004 optimize_1q_gates.py:47(run)
+      392    0.006    0.000    9.401    0.024 _base.py:408(result)
+      392    0.006    0.000    0.074    0.000 dagcircuit.py:192(add_creg)
+      392    0.006    0.000   10.462    0.027 assemble.py:43(assemble)
+     7448    0.006    0.000    0.006    0.000 {built-in method sys.getrecursionlimit}
+      392    0.006    0.000    0.023    0.000 quantumcircuit.py:137(__init__)
+     1960    0.006    0.000    1.924    0.001 dagcircuit.py:735(topological_op_nodes)
+      392    0.006    0.000    0.006    0.000 quantum_pipe.py:123(<listcomp>)
+     7448    0.006    0.000    0.006    0.000 {method 'items' of 'collections.OrderedDict' objects}
+      392    0.006    0.000    0.016    0.000 thread.py:145(submit)
+     6272    0.006    0.000    0.006    0.000 {built-in method builtins.bin}
+     7448    0.005    0.000    0.005    0.000 inspect.py:2835(parameters)
+      392    0.005    0.000    0.016    0.000 quantum_pipe.py:113(encoding_function)
+     1176    0.005    0.000    0.023    0.000 runningpassmanager.py:61(append)
+     6664    0.005    0.000    0.005    0.000 {method 'join' of 'str' objects}
+      392    0.005    0.000    0.010    0.000 quantumcircuit.py:605(add_register)
+     1568    0.005    0.000    0.068    0.000 quantumcircuit.py:498(qbit_argument_conversion)
+     2352    0.005    0.000    0.093    0.000 quantumcircuit.py:424(qubits)
+     1568    0.005    0.000    0.008    0.000 assemble_circuits.py:75(<listcomp>)
+     3920    0.005    0.000    0.005    0.000 basepasses.py:66(name)
+      784    0.005    0.000    0.018    0.000 fromnumeric.py:73(_wrapreduction)
+     1568    0.005    0.000    0.007    0.000 fencedobjs.py:65(__init__)
+     5488    0.005    0.000    0.005    0.000 runningpassmanager.py:217(__iter__)
+      784    0.005    0.000    0.042    0.000 uuid.py:759(uuid4)
+      392    0.005    0.000    9.392    0.024 threading.py:264(wait)
+      392    0.005    0.000    0.022    0.000 transpile.py:228(_check_circuits_coupling_map)
+     2352    0.005    0.000    0.005    0.000 schema.py:1053(_has_processors)
+      784    0.005    0.000    0.023    0.000 fromnumeric.py:2092(sum)
+      784    0.004    0.000    0.009    0.000 os.py:674(__getitem__)
+     2352    0.004    0.000    0.007    0.000 result.py:278(<genexpr>)
+      784    0.004    0.000    0.007    0.000 copy.py:132(deepcopy)
+      392    0.004    0.000    0.004    0.000 {built-in method builtins.sum}
+      392    0.004    0.000    0.045    0.000 aerbackend.py:86(run)
+      784    0.004    0.000    0.249    0.000 dagcircuit.py:602(depth)
+     5488    0.004    0.000    0.004    0.000 {method 'items' of 'dict' objects}
+     1176    0.004    0.000    0.007    0.000 passmanager.py:162(_normalize_passes)
+      786    0.004    0.000    0.004    0.000 {built-in method numpy.zeros}
+     1176    0.004    0.000    0.012    0.000 passmanager.py:68(append)
+      784    0.004    0.000    0.004    0.000 uuid.py:266(__str__)
+      392    0.004    0.000    0.046    0.000 transpile.py:364(_parse_basis_gates)
+     1176    0.004    0.000    0.201    0.000 base.py:332(to_dict)
+      392    0.004    0.000    0.006    0.000 retworkx_dagcircuit.py:43(__init__)
+      784    0.003    0.000    0.258    0.000 depth.py:23(run)
+      392    0.003    0.000    0.031    0.000 passmanager.py:220(_create_running_passmanager)
+     2352    0.003    0.000    0.003    0.000 {method 'intersection_update' of 'set' objects}
+      784    0.003    0.000    0.070    0.000 fields.py:559(_serialize)
+     1176    0.003    0.000    0.005    0.000 quantumcircuit.py:171(data)
+      392    0.003    0.000    0.199    0.001 initializer.py:250(initialize)
+     1176    0.003    0.000    0.004    0.000 runningpassmanager.py:87(_normalize_flow_controller)
+      784    0.003    0.000    0.005    0.000 fencedobjs.py:28(__getattribute__)
+      392    0.003    0.000    0.004    0.000 transpile.py:250(_log_transpile_time)
+      392    0.003    0.000    0.052    0.000 instruction.py:53(__init__)
+     1568    0.003    0.000    0.004    0.000 quantumcircuit.py:462(_bit_argument_conversion)
+      392    0.003    0.000    0.005    0.000 assemble.py:302(_parse_circuit_args)
+      784    0.003    0.000    0.012    0.000 _collections_abc.py:657(get)
+      784    0.003    0.000    0.004    0.000 fencedobjs.py:32(__getitem__)
+      784    0.003    0.000    0.186    0.000 result.py:57(data)
+     1960    0.003    0.000    0.003    0.000 fencedobjs.py:24(__init__)
+      392    0.003    0.000    0.023    0.000 user_config.py:98(get_config)
+      392    0.002    0.000    0.005    0.000 transpile.py:377(_parse_coupling_map)
+      392    0.002    0.000    0.003    0.000 threading.py:216(__init__)
+      392    0.002    0.000    0.003    0.000 parametertable.py:27(__init__)
+      392    0.002    0.000    0.002    0.000 {method 'put' of '_queue.SimpleQueue' objects}
+      784    0.002    0.000    0.004    0.000 os.py:752(encode)
+      392    0.002    0.000    0.005    0.000 _base.py:312(__init__)
+      784    0.002    0.000    0.015    0.000 retworkx_dagcircuit.py:59(_get_multi_graph_nodes)
+      392    0.002    0.000    0.004    0.000 execute.py:34(_log_submission_time)
+      392    0.002    0.000    0.004    0.000 runningpassmanager.py:35(__init__)
+      392    0.002    0.000    0.070    0.000 quantumcircuit.py:541(<listcomp>)
+      392    0.002    0.000   80.336    0.205 passmanager.py:172(run)
+      784    0.002    0.000    0.025    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+     1960    0.002    0.000    0.002    0.000 schema.py:410(dict_class)
+     1568    0.002    0.000    0.002    0.000 fencedobjs.py:40(_check_if_fenced)
+     1176    0.002    0.000    0.002    0.000 quantumcircuitdata.py:28(__init__)
+      392    0.002    0.000    0.002    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+      392    0.002    0.000    0.002    0.000 dagcircuit.py:67(__init__)
+     1568    0.002    0.000    0.002    0.000 basebackend.py:57(configuration)
+      392    0.002    0.000    0.004    0.000 transpile.py:407(_parse_initial_layout)
+      392    0.002    0.000    0.017    0.000 aerjob.py:61(submit)
+      784    0.002    0.000    0.003    0.000 initializer.py:240(broadcast_arguments)
+      784    0.002    0.000    0.006    0.000 level1.py:145(_opt_control)
+      392    0.002    0.000    0.003    0.000 instructionset.py:43(add)
+      392    0.002    0.000    0.003    0.000 aerjob.py:54(__init__)
+     1176    0.002    0.000    0.002    0.000 runningpassmanager.py:291(__init__)
+      392    0.002    0.000    0.002    0.000 quantumcircuit.py:212(_increment_instances)
+      392    0.002    0.000    0.003    0.000 set_layout.py:28(__init__)
+      392    0.002    0.000    0.003    0.000 transpile.py:397(_parse_backend_properties)
+      392    0.002    0.000    0.003    0.000 dense_layout.py:39(__init__)
+      392    0.002    0.000    0.003    0.000 stochastic_swap.py:52(__init__)
+     1176    0.002    0.000    0.003    0.000 qasm_qobj.py:325(__init__)
+      784    0.002    0.000    0.002    0.000 {built-in method from_bytes}
+      392    0.002    0.000    0.008    0.000 os.py:770(getenv)
+      392    0.002    0.000    0.003    0.000 assemble.py:37(_log_assembly_time)
+      392    0.002    0.000    0.002    0.000 {method 'astype' of 'numpy.ndarray' objects}
+      392    0.001    0.000    9.404    0.024 aerjob.py:37(_wrapper)
+      392    0.001    0.000    9.403    0.024 aerjob.py:76(result)
+      784    0.001    0.000    0.001    0.000 {method 'encode' of 'str' objects}
+      392    0.001    0.000    0.012    0.000 genericpath.py:27(isfile)
+      392    0.001    0.000    0.004    0.000 runningpassmanager.py:299(__init__)
+      392    0.001    0.000    0.002    0.000 fencedobjs.py:58(__init__)
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:74(<dictcomp>)
+      392    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:416(parent)
+      392    0.001    0.000    0.002    0.000 trivial_layout.py:34(__init__)
+      392    0.001    0.000    0.001    0.000 passmanager.py:33(__init__)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:138(<listcomp>)
+      392    0.001    0.000    0.002    0.000 full_ancilla_allocation.py:36(__init__)
+      784    0.001    0.000    0.001    0.000 qasm_qobj.py:251(__init__)
+      392    0.001    0.000    0.001    0.000 {method '_acquire_restore' of '_thread.RLock' objects}
+      392    0.001    0.000    0.670    0.002 remove_reset_in_zero_state.py:24(run)
+      784    0.001    0.000    0.003    0.000 transpile.py:173(<genexpr>)
+      392    0.001    0.000    0.002    0.000 layout_2q_distance.py:34(__init__)
+      392    0.001    0.000    0.002    0.000 unroller.py:29(__init__)
+      392    0.001    0.000    0.002    0.000 optimize_1q_gates.py:36(__init__)
+      784    0.001    0.000    0.003    0.000 assemble.py:339(<genexpr>)
+      392    0.001    0.000    0.002    0.000 check_map.py:28(__init__)
+      392    0.001    0.000    0.002    0.000 check_cx_direction.py:28(__init__)
+     1568    0.001    0.000    0.001    0.000 {method 'values' of 'dict' objects}
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:1397(parameters)
+      392    0.001    0.000    0.002    0.000 fixed_point.py:30(__init__)
+     1176    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}
+      392    0.001    0.000    0.001    0.000 {built-in method math.isclose}
+      392    0.001    0.000    0.001    0.000 run_config.py:32(__init__)
+      392    0.001    0.000    0.003    0.000 runningpassmanager.py:212(__init__)
+      392    0.001    0.000    0.002    0.000 cx_direction.py:38(__init__)
+      392    0.001    0.000    0.001    0.000 threading.py:243(__exit__)
+      392    0.001    0.000    0.001    0.000 passmanager_config.py:22(__init__)
+      784    0.001    0.000    0.001    0.000 optimize_1q_gates.py:260(_split_runs_on_parameters)
+      392    0.001    0.000    0.001    0.000 thread.py:176(_adjust_thread_count)
+      784    0.001    0.000    0.001    0.000 quantumcircuit.py:624(<listcomp>)
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:387(__init__)
+      392    0.001    0.000    0.005    0.000 assemble.py:319(_expand_parameters)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:610(<listcomp>)
+      392    0.001    0.000    0.001    0.000 transpile.py:473(_parse_output_name)
+      392    0.001    0.000    0.001    0.000 transpile.py:392(<listcomp>)
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:2087(_sum_dispatcher)
+      784    0.001    0.000    0.001    0.000 assemble.py:136(<genexpr>)
+      784    0.001    0.000    0.001    0.000 fields.py:499(schema)
+      392    0.001    0.000    0.001    0.000 instructionset.py:25(__init__)
+      392    0.001    0.000    0.001    0.000 {built-in method math.log2}
+      392    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+      392    0.001    0.000    0.001    0.000 transpile.py:431(<listcomp>)
+      784    0.001    0.000    0.001    0.000 {method 'count' of 'list' objects}
+      392    0.001    0.000    0.001    0.000 threading.py:240(__enter__)
+      392    0.001    0.000    0.001    0.000 basejob.py:33(__init__)
+      784    0.001    0.000    0.001    0.000 transpile.py:230(<genexpr>)
+      392    0.001    0.000    0.001    0.000 transpile.py:467(_parse_callback)
+      392    0.001    0.000    0.001    0.000 transpile.py:443(_parse_routing_method)
+      784    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+      392    0.001    0.000    0.001    0.000 transpile.py:449(_parse_seed_transpiler)
+      392    0.001    0.000    0.001    0.000 transpile.py:437(_parse_layout_method)
+      392    0.001    0.000    0.001    0.000 transpile.py:455(_parse_optimization_level)
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:176(__init__)
+      392    0.001    0.000    0.001    0.000 threading.py:75(RLock)
+      784    0.001    0.000    0.001    0.000 {method 'values' of 'collections.OrderedDict' objects}
+      392    0.001    0.000    0.001    0.000 {method 'rpartition' of 'str' objects}
+      392    0.001    0.000    0.001    0.000 thread.py:46(__init__)
+      392    0.001    0.000    0.001    0.000 _base.py:382(__get_result)
+      392    0.001    0.000    0.001    0.000 initializer.py:241(<listcomp>)
+      784    0.001    0.000    0.001    0.000 propertyset.py:22(__missing__)
+      784    0.001    0.000    0.001    0.000 copy.py:190(_deepcopy_atomic)
+      392    0.001    0.000    0.001    0.000 {method '_release_save' of '_thread.RLock' objects}
+      392    0.001    0.000    0.001    0.000 {method '__enter__' of '_thread.RLock' objects}
+      392    0.001    0.000    0.001    0.000 assemble.py:314(<dictcomp>)
+      392    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+      392    0.000    0.000    0.000    0.000 assemble.py:206(<dictcomp>)
+      392    0.000    0.000    0.000    0.000 parametertable.py:55(get_keys)
+        1    0.000    0.000  102.244  102.244 quantum_process.py:37(<listcomp>)
+      392    0.000    0.000    0.000    0.000 {method 'is_integer' of 'float' objects}
+      392    0.000    0.000    0.000    0.000 transpile.py:499(<listcomp>)
+      392    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+      392    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+      392    0.000    0.000    0.000    0.000 quantumcircuit.py:542(<listcomp>)
+      392    0.000    0.000    0.000    0.000 parametertable.py:34(<genexpr>)
+      392    0.000    0.000    0.000    0.000 {method 'keys' of 'collections.OrderedDict' objects}
+      392    0.000    0.000    0.000    0.000 transpile.py:410(_layout_from_raw)
+      392    0.000    0.000    0.000    0.000 basebackend.py:65(properties)
+      392    0.000    0.000    0.000    0.000 run_config.py:72(to_dict)
+      392    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+      392    0.000    0.000    0.000    0.000 {method '_is_owned' of '_thread.RLock' objects}
+      392    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+IMAGE COMPLETED: 3 of 4
+filter completed in 66.17877101898193 s
+filter completed in 66.81787848472595 s
+         79225156 function calls (79223196 primitive calls) in 132.997 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   290864   20.282    0.000   54.842    0.000 dagcircuit.py:292(apply_operation_back)
+      784   12.320    0.016   12.320    0.016 {method 'acquire' of '_thread.lock' objects}
+  1163456    5.326    0.000   14.774    0.000 copy.py:66(copy)
+  8721608    4.582    0.000    4.603    0.000 {built-in method builtins.isinstance}
+  5540332    3.591    0.000    3.591    0.000 bit.py:75(__hash__)
+  2213624    3.217    0.000    5.850    0.000 retworkx_dagcircuit.py:62(_add_multi_graph_edge)
+  1103676    3.142    0.000    4.679    0.000 register.py:98(__repr__)
+  4429208    2.803    0.000    2.803    0.000 register.py:74(name)
+   581728    2.798    0.000    5.331    0.000 copy.py:268(_reconstruct)
+   290864    2.782    0.000    5.090    0.000 assemble_circuits.py:71(<listcomp>)
+   291256    2.685    0.000    4.976    0.000 quantumcircuit.py:581(_update_parameter_table)
+  2213624    2.634    0.000    2.634    0.000 {method 'add_edge' of 'retworkx.PyDAG' objects}
+  4425680    2.607    0.000    2.607    0.000 bit.py:49(register)
+  5193608    2.566    0.000    2.566    0.000 {built-in method builtins.hasattr}
+  1105244    2.466    0.000    5.364    0.000 retworkx_dagcircuit.py:120(predecessors)
+   269108    2.432    0.000    4.469    0.000 instruction.py:209(<listcomp>)
+  1103676    2.421    0.000    7.100    0.000 bit.py:71(__repr__)
+  1166200    2.420    0.000    8.840    0.000 {built-in method builtins.all}
+   290864    2.383    0.000    7.367    0.000 instruction.py:203(assemble)
+   297136    2.150    0.000    9.480    0.000 dagnode.py:34(__init__)
+  3318868    2.046    0.000    2.046    0.000 bit.py:60(index)
+  1396500    1.994    0.000    4.254    0.000 quantumcircuit.py:644(<genexpr>)
+  1105244    1.930    0.000    1.930    0.000 {method 'predecessors' of 'retworkx.PyDAG' objects}
+  1189328    1.714    0.000    2.847    0.000 dagnode.py:104(__hash__)
+   581728    1.481    0.000   16.255    0.000 instruction.py:292(__deepcopy__)
+  1105244    1.448    0.000    1.448    0.000 {method 'remove_edge' of 'retworkx.PyDAG' objects}
+   581728    1.419    0.000    2.161    0.000 dagcircuit.py:246(_check_bits)
+     1568    1.409    0.001    6.492    0.004 dagcircuit.py:1237(collect_runs)
+   291256    1.335    0.000   18.829    0.000 quantumcircuit.py:549(_append)
+  1396500    1.279    0.000    1.817    0.000 quantumcircuit.py:642(<genexpr>)
+   873768    1.261    0.000    2.056    0.000 _collections_abc.py:879(__iter__)
+     1960    1.247    0.001    1.977    0.001 {lexicographical_topological_sort}
+   291256    1.207    0.000    2.079    0.000 quantumcircuit.py:634(_check_dups)
+  1106812    1.180    0.000    1.709    0.000 quantumcircuit.py:227(has_register)
+   290864    1.128    0.000   11.585    0.000 dagcircuit.py:275(_add_op_node)
+  1784774    1.114    0.000    1.114    0.000 {method 'get' of 'dict' objects}
+  1195598    1.102    0.000    1.102    0.000 {built-in method builtins.getattr}
+  1730876    1.066    0.000    1.066    0.000 {built-in method builtins.len}
+      392    1.036    0.003   27.998    0.071 dag_to_circuit.py:19(dag_to_circuit)
+      392    1.005    0.003   66.874    0.171 circuit_to_dag.py:20(circuit_to_dag)
+  1131508    0.988    0.000    0.988    0.000 {built-in method builtins.iter}
+      392    0.982    0.003   15.336    0.039 assemble_circuits.py:22(_assemble_circuit)
+   581728    0.829    0.000    1.221    0.000 copyreg.py:87(__newobj__)
+   581728    0.821    0.000   17.076    0.000 instruction.py:274(copy)
+   873768    0.795    0.000    0.795    0.000 quantumcircuitdata.py:31(__getitem__)
+   291256    0.789    0.000    8.631    0.000 quantumcircuit.py:640(_check_qargs)
+  1107596    0.782    0.000    0.782    0.000 register.py:86(size)
+  1456280    0.781    0.000    0.781    0.000 dagcircuit.py:742(<genexpr>)
+   581728    0.746    0.000    0.746    0.000 {method '__reduce_ex__' of 'object' objects}
+  1485680    0.730    0.000    0.730    0.000 retworkx_dagcircuit.py:109(_key)
+  1105244    0.646    0.000    0.646    0.000 {method 'index' of 'list' objects}
+   583296    0.592    0.000    0.592    0.000 {method 'update' of 'dict' objects}
+   297136    0.588    0.000    1.020    0.000 retworkx_dagcircuit.py:50(_add_multi_graph_node)
+  1196776    0.580    0.000    0.580    0.000 {built-in method builtins.hash}
+  1197560    0.566    0.000    0.566    0.000 {built-in method builtins.id}
+   291256    0.553    0.000    1.507    0.000 quantumcircuit.py:647(_check_cargs)
+      784    0.497    0.001    0.966    0.001 dagcircuit.py:961(op_nodes)
+   941191    0.485    0.000    0.485    0.000 {method 'append' of 'list' objects}
+   581728    0.466    0.000    0.466    0.000 {method 'copy' of 'list' objects}
+   851228    0.462    0.000    0.462    0.000 instruction.py:132(params)
+   297136    0.432    0.000    0.432    0.000 {method 'add_node' of 'retworkx.PyDAG' objects}
+   582120    0.393    0.000    0.393    0.000 {built-in method __new__ of type object at 0x7f166b450240}
+   581728    0.363    0.000    0.363    0.000 {built-in method builtins.issubclass}
+   581728    0.359    0.000    0.359    0.000 dagnode.py:61(op)
+   291256    0.315    0.000    0.817    0.000 assemble_circuits.py:60(<genexpr>)
+   291256    0.273    0.000    0.274    0.000 {method 'union' of 'set' objects}
+   290864    0.214    0.000    0.214    0.000 qasm_qobj.py:41(__init__)
+   290864    0.211    0.000    0.211    0.000 dagcircuit.py:264(_bits_in_condition)
+      784    0.203    0.000    0.203    0.000 {dag_longest_path_length}
+   290864    0.202    0.000    0.202    0.000 dagcircuit.py:232(_check_condition)
+      392    0.194    0.000  103.164    0.263 passmanager.py:257(_run_single_circuit)
+   290864    0.168    0.000    0.168    0.000 dagnode.py:72(qargs)
+        2    0.159    0.079  132.997   66.498 quantum_pipe.py:86(conv)
+   292824    0.157    0.000    0.157    0.000 quantumcircuit.py:649(<genexpr>)
+   292824    0.153    0.000    0.159    0.000 quantumcircuit.py:651(<genexpr>)
+     7448    0.147    0.000    0.253    0.000 inspect.py:2879(_bind)
+     1568    0.144    0.000    0.964    0.001 {built-in method builtins.any}
+      392    0.128    0.000    0.447    0.001 unroller.py:39(run)
+     7448    0.106    0.000    0.347    0.000 inspect.py:2117(_signature_from_function)
+     7448    0.071    0.000    0.511    0.000 inspect.py:2198(_signature_from_callable)
+     7448    0.063    0.000    0.918    0.000 basepasses.py:35(_freeze_init_parameters)
+    13720    0.060    0.000    0.120    0.000 inspect.py:2467(__init__)
+     7448    0.051    0.000    1.009    0.000 basepasses.py:30(__call__)
+     3136    0.049    0.000    0.124    0.000 dagcircuit.py:202(_add_wire)
+    12544    0.043    0.000    0.070    0.000 register.py:106(__getitem__)
+    19796    0.042    0.000    0.135    0.000 gate.py:85(assemble)
+     7448    0.041    0.000    0.079    0.000 inspect.py:2750(__init__)
+     6271    0.037    0.000    0.136    0.000 postprocess.py:48(format_counts_memory)
+     3920    0.036    0.000    7.986    0.002 runningpassmanager.py:152(_run_this_pass)
+     1960    0.034    0.000    0.062    0.000 base.py:127(dump_additional_data)
+    41160    0.034    0.000    0.039    0.000 {built-in method builtins.next}
+     7448    0.030    0.000    0.059    0.000 inspect.py:484(unwrap)
+      784    0.029    0.000    3.356    0.004 cx_cancellation.py:23(run)
+    40768    0.029    0.000    0.029    0.000 inspect.py:2517(name)
+    21168    0.028    0.000    0.038    0.000 inspect.py:2799(<genexpr>)
+    13720    0.028    0.000    0.040    0.000 enum.py:284(__call__)
+      784    0.027    0.000    0.027    0.000 {built-in method posix.urandom}
+      784    0.025    0.000    0.025    0.000 {is_directed_acyclic_graph}
+      392    0.025    0.000    0.048    0.000 instruction.py:137(params)
+    14896    0.022    0.000    0.033    0.000 inspect.py:158(isfunction)
+    30184    0.021    0.000    0.021    0.000 inspect.py:2529(kind)
+    11760    0.021    0.000    0.073    0.000 register.py:132(__iter__)
+    13328    0.020    0.000    0.029    0.000 transpile.py:371(<genexpr>)
+     6271    0.020    0.000    0.029    0.000 postprocess.py:38(_separate_bitstring)
+      392    0.019    0.000    1.042    0.003 level1.py:49(level_1_pass_manager)
+    21557    0.018    0.000    0.018    0.000 {method 'startswith' of 'str' objects}
+    10196    0.018    0.000    0.018    0.000 {built-in method time.time}
+     6271    0.017    0.000    0.035    0.000 postprocess.py:32(_pad_zeros)
+     7448    0.017    0.000    0.017    0.000 basepasses.py:54(__init__)
+     3920    0.017    0.000    0.027    0.000 runningpassmanager.py:192(_log_pass)
+     7448    0.017    0.000    0.270    0.000 inspect.py:3010(bind)
+     3920    0.016    0.000    8.036    0.002 runningpassmanager.py:125(_do_pass)
+1960/1176    0.016    0.000    0.154    0.000 schema.py:501(_serialize)
+     3920    0.016    0.000    0.138    0.000 fields.py:287(serialize)
+     6271    0.016    0.000    0.021    0.000 postprocess.py:22(_hex_to_bin)
+     8624    0.015    0.000    0.033    0.000 retworkx_dagcircuit.py:116(successors)
+1960/1176    0.014    0.000    0.198    0.000 schema.py:527(dump)
+     3920    0.014    0.000    0.079    0.000 schema.py:1192(_invoke_processors)
+     7448    0.014    0.000    0.538    0.000 inspect.py:3081(signature)
+      392    0.014    0.000  102.939    0.263 runningpassmanager.py:95(run)
+     7448    0.014    0.000    0.524    0.000 inspect.py:2829(from_callable)
+     2352    0.014    0.000    0.087    0.000 quantumcircuit.py:429(<listcomp>)
+     8624    0.013    0.000    0.013    0.000 {method 'successors' of 'retworkx.PyDAG' objects}
+     3920    0.013    0.000    0.032    0.000 runningpassmanager.py:197(_update_valid_passes)
+    13720    0.012    0.000    0.012    0.000 enum.py:526(__new__)
+      392    0.011    0.000    0.011    0.000 {built-in method posix.stat}
+     7448    0.011    0.000    0.017    0.000 inspect.py:504(_is_wrapper)
+     7056    0.011    0.000    0.016    0.000 {method 'add' of 'set' objects}
+    19796    0.011    0.000    0.011    0.000 gate.py:92(label)
+      784    0.011    0.000    0.011    0.000 {method 'nodes' of 'retworkx.PyDAG' objects}
+     7056    0.011    0.000    0.021    0.000 abc.py:137(__instancecheck__)
+      392    0.011    0.000  119.842    0.306 execute.py:40(execute)
+      784    0.011    0.000    0.011    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    13720    0.011    0.000    0.011    0.000 {method 'isidentifier' of 'str' objects}
+      392    0.011    0.000    0.075    0.000 transpile.py:310(_parse_transpile_args)
+     3920    0.010    0.000    0.028    0.000 utils.py:213(get_value)
+     6271    0.010    0.000    0.010    0.000 {built-in method builtins.format}
+     3920    0.010    0.000    0.048    0.000 fields.py:209(get_value)
+     7056    0.010    0.000    0.010    0.000 {built-in method _abc._abc_instancecheck}
+     1176    0.010    0.000    0.022    0.000 result.py:247(_get_experiment)
+     6272    0.010    0.000    0.010    0.000 {method 'item' of 'numpy.generic' objects}
+      392    0.010    0.000  104.366    0.266 transpile.py:42(transpile)
+      392    0.010    0.000    0.039    0.000 assemble.py:166(_parse_common_args)
+     3920    0.009    0.000    0.015    0.000 utils.py:239(_get_value_for_key)
+      392    0.009    0.000    0.068    0.000 initializer.py:44(__init__)
+     5096    0.008    0.000    0.014    0.000 __init__.py:1368(info)
+      392    0.008    0.000  104.217    0.266 transpile.py:255(_transpile_circuit)
+      392    0.008    0.000    0.145    0.000 postprocess.py:157(format_counts)
+      784    0.008    0.000    0.012    0.000 uuid.py:121(__init__)
+     6271    0.008    0.000    0.008    0.000 {method 'format' of 'str' objects}
+    10976    0.008    0.000    0.008    0.000 {built-in method builtins.callable}
+     7448    0.008    0.000    0.008    0.000 {method 'values' of 'mappingproxy' objects}
+     1960    0.008    0.000    0.087    0.000 schema.py:1057(_invoke_dump_processors)
+     3528    0.007    0.000    0.015    0.000 runningpassmanager.py:305(__iter__)
+      392    0.007    0.000   15.349    0.039 assemble_circuits.py:113(assemble_circuits)
+      392    0.007    0.000    0.379    0.001 result.py:160(get_counts)
+     7448    0.007    0.000    0.007    0.000 inspect.py:2609(__init__)
+      392    0.007    0.000    0.084    0.000 dagcircuit.py:182(add_qreg)
+      392    0.007    0.000    0.016    0.000 quantum_pipe.py:133(shannon_entropy)
+      784    0.007    0.000    0.033    0.000 <__array_function__ internals>:2(sum)
+1568/1176    0.007    0.000    0.013    0.000 runningpassmanager.py:259(controller_factory)
+     3920    0.007    0.000    0.035    0.000 schema.py:469(get_attribute)
+      784    0.006    0.000  119.560    0.152 parallel.py:72(parallel_map)
+      392    0.006    0.000   12.337    0.031 _base.py:408(result)
+      392    0.006    0.000    0.127    0.000 quantumcircuit.py:524(append)
+     5488    0.006    0.000    0.010    0.000 basepasses.py:90(is_analysis_pass)
+      784    0.006    0.000    0.006    0.000 {built-in method builtins.repr}
+      392    0.006    0.000    0.016    0.000 dagcircuit.py:59(__new__)
+      392    0.006    0.000   15.410    0.039 assemble.py:43(assemble)
+      784    0.006    0.000    3.188    0.004 optimize_1q_gates.py:47(run)
+     7448    0.006    0.000    0.006    0.000 {built-in method sys.getrecursionlimit}
+      392    0.006    0.000    0.074    0.000 dagcircuit.py:192(add_creg)
+      392    0.006    0.000    0.016    0.000 thread.py:145(submit)
+     1960    0.006    0.000    1.984    0.001 retworkx_dagcircuit.py:102(topological_nodes)
+      392    0.006    0.000    0.006    0.000 quantum_pipe.py:123(<listcomp>)
+     7448    0.006    0.000    0.006    0.000 {method 'items' of 'collections.OrderedDict' objects}
+     7448    0.005    0.000    0.005    0.000 inspect.py:2835(parameters)
+     7840    0.005    0.000    0.005    0.000 basepasses.py:60(__hash__)
+     6271    0.005    0.000    0.005    0.000 {built-in method builtins.bin}
+      392    0.005    0.000    0.020    0.000 quantumcircuit.py:137(__init__)
+      392    0.005    0.000    0.016    0.000 quantum_pipe.py:113(encoding_function)
+     5096    0.005    0.000    0.005    0.000 __init__.py:1614(isEnabledFor)
+     1176    0.005    0.000    0.023    0.000 runningpassmanager.py:61(append)
+     1568    0.005    0.000    0.067    0.000 quantumcircuit.py:498(qbit_argument_conversion)
+     2352    0.005    0.000    0.092    0.000 quantumcircuit.py:424(qubits)
+     6663    0.005    0.000    0.005    0.000 {method 'join' of 'str' objects}
+     1568    0.005    0.000    0.008    0.000 assemble_circuits.py:75(<listcomp>)
+      784    0.005    0.000    0.044    0.000 uuid.py:759(uuid4)
+     1960    0.005    0.000    1.989    0.001 dagcircuit.py:735(topological_op_nodes)
+      784    0.005    0.000    0.011    0.000 fixed_point.py:39(run)
+     3920    0.005    0.000    0.008    0.000 basepasses.py:81(is_transformation_pass)
+      784    0.005    0.000    0.017    0.000 fromnumeric.py:73(_wrapreduction)
+      392    0.005    0.000   12.327    0.031 threading.py:264(wait)
+     2352    0.005    0.000    0.005    0.000 schema.py:1053(_has_processors)
+      392    0.005    0.000    0.022    0.000 transpile.py:228(_check_circuits_coupling_map)
+      784    0.005    0.000    0.009    0.000 os.py:674(__getitem__)
+      392    0.004    0.000    0.047    0.000 aerbackend.py:86(run)
+      784    0.004    0.000    0.023    0.000 fromnumeric.py:2092(sum)
+      392    0.004    0.000    0.009    0.000 quantumcircuit.py:605(add_register)
+     2352    0.004    0.000    0.007    0.000 result.py:278(<genexpr>)
+      392    0.004    0.000    0.004    0.000 {built-in method builtins.sum}
+     1176    0.004    0.000    0.007    0.000 passmanager.py:162(_normalize_passes)
+     5488    0.004    0.000    0.004    0.000 {method 'items' of 'dict' objects}
+      786    0.004    0.000    0.004    0.000 {built-in method numpy.zeros}
+      784    0.004    0.000    0.004    0.000 uuid.py:266(__str__)
+     1176    0.004    0.000    0.012    0.000 passmanager.py:68(append)
+     3920    0.004    0.000    0.004    0.000 basepasses.py:66(name)
+     5488    0.004    0.000    0.004    0.000 runningpassmanager.py:217(__iter__)
+     1568    0.004    0.000    0.005    0.000 fencedobjs.py:65(__init__)
+      392    0.004    0.000    0.045    0.000 transpile.py:364(_parse_basis_gates)
+     1176    0.004    0.000    0.202    0.000 base.py:332(to_dict)
+      392    0.004    0.000    0.006    0.000 retworkx_dagcircuit.py:43(__init__)
+      784    0.004    0.000    0.232    0.000 dagcircuit.py:602(depth)
+      784    0.004    0.000    0.006    0.000 copy.py:132(deepcopy)
+      392    0.003    0.000    0.031    0.000 passmanager.py:220(_create_running_passmanager)
+      392    0.003    0.000    0.005    0.000 transpile.py:250(_log_transpile_time)
+     1176    0.003    0.000    0.005    0.000 quantumcircuit.py:171(data)
+      392    0.003    0.000    0.052    0.000 instruction.py:53(__init__)
+      784    0.003    0.000    0.070    0.000 fields.py:559(_serialize)
+      392    0.003    0.000    0.199    0.001 initializer.py:250(initialize)
+     1176    0.003    0.000    0.004    0.000 runningpassmanager.py:87(_normalize_flow_controller)
+     1568    0.003    0.000    0.004    0.000 quantumcircuit.py:462(_bit_argument_conversion)
+      784    0.003    0.000    0.012    0.000 _collections_abc.py:657(get)
+      784    0.003    0.000    0.239    0.000 depth.py:23(run)
+      392    0.003    0.000    0.005    0.000 assemble.py:302(_parse_circuit_args)
+      392    0.003    0.000    0.024    0.000 user_config.py:98(get_config)
+      784    0.003    0.000    0.186    0.000 result.py:57(data)
+     2352    0.003    0.000    0.003    0.000 {method 'intersection_update' of 'set' objects}
+      392    0.003    0.000    0.004    0.000 execute.py:34(_log_submission_time)
+      392    0.003    0.000    0.003    0.000 {method 'put' of '_queue.SimpleQueue' objects}
+      784    0.003    0.000    0.005    0.000 os.py:752(encode)
+      392    0.002    0.000    0.006    0.000 _base.py:312(__init__)
+      392    0.002    0.000    0.003    0.000 threading.py:216(__init__)
+      784    0.002    0.000    0.004    0.000 fencedobjs.py:28(__getattribute__)
+      784    0.002    0.000    0.003    0.000 fencedobjs.py:32(__getitem__)
+      392    0.002    0.000    0.005    0.000 transpile.py:377(_parse_coupling_map)
+      392    0.002    0.000  103.166    0.263 passmanager.py:172(run)
+      392    0.002    0.000    0.004    0.000 runningpassmanager.py:35(__init__)
+      392    0.002    0.000    0.070    0.000 quantumcircuit.py:541(<listcomp>)
+     1960    0.002    0.000    0.002    0.000 fencedobjs.py:24(__init__)
+      784    0.002    0.000    0.025    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+     1176    0.002    0.000    0.002    0.000 quantumcircuitdata.py:28(__init__)
+     1960    0.002    0.000    0.002    0.000 schema.py:410(dict_class)
+      392    0.002    0.000    0.002    0.000 parametertable.py:27(__init__)
+      392    0.002    0.000    0.002    0.000 {method 'flatten' of 'numpy.ndarray' objects}
+      392    0.002    0.000    0.002    0.000 dagcircuit.py:67(__init__)
+      784    0.002    0.000    0.014    0.000 retworkx_dagcircuit.py:59(_get_multi_graph_nodes)
+     1568    0.002    0.000    0.002    0.000 basebackend.py:57(configuration)
+      392    0.002    0.000    0.018    0.000 aerjob.py:61(submit)
+      392    0.002    0.000    0.003    0.000 aerjob.py:54(__init__)
+      392    0.002    0.000    0.004    0.000 transpile.py:407(_parse_initial_layout)
+      784    0.002    0.000    0.003    0.000 initializer.py:240(broadcast_arguments)
+     1176    0.002    0.000    0.002    0.000 runningpassmanager.py:291(__init__)
+      392    0.002    0.000    0.003    0.000 instructionset.py:43(add)
+      392    0.002    0.000    0.003    0.000 transpile.py:397(_parse_backend_properties)
+      392    0.002    0.000    0.003    0.000 set_layout.py:28(__init__)
+     1568    0.002    0.000    0.002    0.000 fencedobjs.py:40(_check_if_fenced)
+      392    0.002    0.000    0.009    0.000 os.py:770(getenv)
+      392    0.002    0.000    0.003    0.000 stochastic_swap.py:52(__init__)
+      784    0.002    0.000    0.002    0.000 {built-in method from_bytes}
+      392    0.002    0.000    0.003    0.000 dense_layout.py:39(__init__)
+     1176    0.002    0.000    0.003    0.000 qasm_qobj.py:325(__init__)
+      784    0.002    0.000    0.005    0.000 level1.py:145(_opt_control)
+      392    0.002    0.000    0.002    0.000 quantumcircuit.py:212(_increment_instances)
+      392    0.002    0.000   12.340    0.031 aerjob.py:37(_wrapper)
+      392    0.002    0.000    0.003    0.000 assemble.py:37(_log_assembly_time)
+      392    0.001    0.000    0.001    0.000 {method 'astype' of 'numpy.ndarray' objects}
+      392    0.001    0.000   12.338    0.031 aerjob.py:76(result)
+      784    0.001    0.000    0.001    0.000 {method 'encode' of 'str' objects}
+      392    0.001    0.000    0.004    0.000 runningpassmanager.py:299(__init__)
+      392    0.001    0.000    0.013    0.000 genericpath.py:27(isfile)
+      392    0.001    0.000    0.002    0.000 fencedobjs.py:58(__init__)
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:74(<dictcomp>)
+      392    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:416(parent)
+      392    0.001    0.000    0.002    0.000 trivial_layout.py:34(__init__)
+      392    0.001    0.000    0.001    0.000 passmanager.py:33(__init__)
+      392    0.001    0.000    0.002    0.000 full_ancilla_allocation.py:36(__init__)
+      784    0.001    0.000    0.001    0.000 qasm_qobj.py:251(__init__)
+      784    0.001    0.000    0.003    0.000 transpile.py:173(<genexpr>)
+      392    0.001    0.000    0.002    0.000 layout_2q_distance.py:34(__init__)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:1397(parameters)
+      392    0.001    0.000    0.002    0.000 unroller.py:29(__init__)
+      392    0.001    0.000    0.001    0.000 {method '_acquire_restore' of '_thread.RLock' objects}
+      392    0.001    0.000    0.002    0.000 optimize_1q_gates.py:36(__init__)
+     1568    0.001    0.000    0.001    0.000 {method 'values' of 'dict' objects}
+      392    0.001    0.000    0.002    0.000 check_map.py:28(__init__)
+      392    0.001    0.000    0.002    0.000 fixed_point.py:30(__init__)
+      392    0.001    0.000    0.002    0.000 check_cx_direction.py:28(__init__)
+      784    0.001    0.000    0.003    0.000 assemble.py:339(<genexpr>)
+      392    0.001    0.000    0.002    0.000 quantumcircuit.py:138(<listcomp>)
+      392    0.001    0.000    0.001    0.000 run_config.py:32(__init__)
+      392    0.001    0.000    0.001    0.000 {built-in method math.isclose}
+     1176    0.001    0.000    0.001    0.000 {method 'pop' of 'dict' objects}
+      392    0.001    0.000    0.003    0.000 runningpassmanager.py:212(__init__)
+      392    0.001    0.000    0.002    0.000 cx_direction.py:38(__init__)
+      392    0.001    0.000    0.648    0.002 remove_reset_in_zero_state.py:24(run)
+      392    0.001    0.000    0.001    0.000 threading.py:243(__exit__)
+      392    0.001    0.000    0.001    0.000 passmanager_config.py:22(__init__)
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:387(__init__)
+      392    0.001    0.000    0.005    0.000 assemble.py:319(_expand_parameters)
+      392    0.001    0.000    0.001    0.000 thread.py:176(_adjust_thread_count)
+      784    0.001    0.000    0.001    0.000 quantumcircuit.py:624(<listcomp>)
+      392    0.001    0.000    0.001    0.000 transpile.py:473(_parse_output_name)
+      784    0.001    0.000    0.001    0.000 fromnumeric.py:2087(_sum_dispatcher)
+      784    0.001    0.000    0.001    0.000 assemble.py:136(<genexpr>)
+      784    0.001    0.000    0.001    0.000 optimize_1q_gates.py:260(_split_runs_on_parameters)
+      392    0.001    0.000    0.001    0.000 transpile.py:392(<listcomp>)
+      784    0.001    0.000    0.001    0.000 fields.py:499(schema)
+      392    0.001    0.000    0.001    0.000 instructionset.py:25(__init__)
+      392    0.001    0.000    0.001    0.000 threading.py:240(__enter__)
+      784    0.001    0.000    0.001    0.000 {method 'count' of 'list' objects}
+      392    0.001    0.000    0.001    0.000 quantumcircuit.py:610(<listcomp>)
+      392    0.001    0.000    0.001    0.000 {built-in method math.log2}
+      392    0.001    0.000    0.001    0.000 transpile.py:431(<listcomp>)
+      392    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+      392    0.001    0.000    0.001    0.000 basejob.py:33(__init__)
+      392    0.001    0.000    0.001    0.000 transpile.py:437(_parse_layout_method)
+      784    0.001    0.000    0.001    0.000 transpile.py:230(<genexpr>)
+      392    0.001    0.000    0.001    0.000 transpile.py:467(_parse_callback)
+      784    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+      392    0.001    0.000    0.001    0.000 qasm_qobj.py:176(__init__)
+      392    0.001    0.000    0.001    0.000 transpile.py:443(_parse_routing_method)
+      392    0.001    0.000    0.001    0.000 transpile.py:449(_parse_seed_transpiler)
+      392    0.001    0.000    0.001    0.000 threading.py:75(RLock)
+      392    0.001    0.000    0.001    0.000 transpile.py:455(_parse_optimization_level)
+      392    0.001    0.000    0.001    0.000 {method 'rpartition' of 'str' objects}
+      392    0.001    0.000    0.001    0.000 _base.py:382(__get_result)
+      392    0.001    0.000    0.001    0.000 thread.py:46(__init__)
+      392    0.001    0.000    0.001    0.000 initializer.py:241(<listcomp>)
+      784    0.001    0.000    0.001    0.000 {method 'values' of 'collections.OrderedDict' objects}
+        1    0.001    0.001  132.997  132.997 quantum_process.py:37(<listcomp>)
+      392    0.001    0.000    0.001    0.000 {method '_release_save' of '_thread.RLock' objects}
+      784    0.001    0.000    0.001    0.000 propertyset.py:22(__missing__)
+      392    0.001    0.000    0.001    0.000 {method '__enter__' of '_thread.RLock' objects}
+      392    0.001    0.000    0.001    0.000 assemble.py:314(<dictcomp>)
+      392    0.001    0.000    0.001    0.000 {method 'lower' of 'str' objects}
+      784    0.000    0.000    0.000    0.000 copy.py:190(_deepcopy_atomic)
+      392    0.000    0.000    0.000    0.000 assemble.py:206(<dictcomp>)
+      392    0.000    0.000    0.000    0.000 parametertable.py:55(get_keys)
+      392    0.000    0.000    0.000    0.000 transpile.py:499(<listcomp>)
+      392    0.000    0.000    0.000    0.000 {method 'is_integer' of 'float' objects}
+      392    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+      392    0.000    0.000    0.000    0.000 quantumcircuit.py:542(<listcomp>)
+      392    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+      392    0.000    0.000    0.000    0.000 {method 'keys' of 'collections.OrderedDict' objects}
+      392    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+      392    0.000    0.000    0.000    0.000 run_config.py:72(to_dict)
+      392    0.000    0.000    0.000    0.000 basebackend.py:65(properties)
+      392    0.000    0.000    0.000    0.000 transpile.py:410(_layout_from_raw)
+      392    0.000    0.000    0.000    0.000 parametertable.py:34(<genexpr>)
+      392    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+      392    0.000    0.000    0.000    0.000 {method '_is_owned' of '_thread.RLock' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+IMAGE COMPLETED: 4 of 4
