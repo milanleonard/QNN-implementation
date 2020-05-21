@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 #%%
+SINGLE_GATE_SET = np.array(['X','Y','Z','T','S','H'])
+MULTI_GATE_SET = np.array(['CNOT'])
 np.random.seed(42)
 def generate_random_circuit(depth, num_qubits, prob_appl_single, prob_appl_multi):
     assert prob_appl_multi > prob_appl_single, "multi gate qubit application should be less likely than single (arbitrary, could change)"
@@ -120,8 +122,6 @@ def shannon_entropy(input_arr):
     return -np.sum(input_arr * np.log(input_arr+1e-11)) # offset for non-zero elements
 # %%
 if __name__ == '__main__':
-    SINGLE_GATE_SET = np.array(['X','Y','Z','T','S','H'])
-    MULTI_GATE_SET = np.array(['CNOT'])
     train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
     backend = Aer.get_backend('qasm_simulator')
     qc = generate_random_circuit(depth=10,num_qubits=9,prob_appl_single=0.5,prob_appl_multi=0.8)
