@@ -34,7 +34,7 @@ for idx, image in enumerate(this_data):
     outputs = [conv(qc, 2, image) for qc in quantum_circuits]
     print("IMAGE COMPLETED:", idx)
     img_outputs.append(outputs)
-np.save(f'./quantum_data/start{args.start_idx}to{args.start_idx+args.num_datapoints}.npy',img_outputs)
+np.save('./quantum_data/FILLMEINHERE.npy',img_outputs)
 
 
 # %%
