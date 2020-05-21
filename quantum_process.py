@@ -1,5 +1,5 @@
 #%%
-'''This exists because I don't want to use argparse and multiprocessing to handle
+'''This exists because I don't want to use multiprocessing to handle
 running it over the data on many machines, so I'll just manually set it off
 Mac : 4 Cores at 2.5GHz
 PARTCH : 6 Cores / 6 threads at 3.3Ghz, boosts to 4.5GHz, ptentially shared
@@ -9,12 +9,18 @@ PC : 6 Cores / 12 threads at 3.3GHz
 from quantum_pipe import generate_random_circuit, conv
 import pandas as pd
 import numpy as np
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-start_idx',type=int)
+parser.add_argument('-num_datapoints',type=int)
+
+args = parser.parse_args()
 #seed means that the circuits generated are the same accross machines
 np.random.seed(42)
 
 train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
-this_data = train_data[0:2].drop(['label'],axis=1)
+this_data = train_data[args.start_idx:args.start_idx+args.num_datapoints].drop(['label'],axis=1)
 this_data = (this_data / 255).round().astype(np.uint8).values
 # num qubits is square of filter size
 quantum_circuits = [generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7) for _ in range(2)]
