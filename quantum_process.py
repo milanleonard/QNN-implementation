@@ -23,17 +23,15 @@ this_data = train_data[args.start_idx:args.start_idx+args.num_datapoints].drop([
 this_data = (this_data / 255).round().astype(np.uint8).values
 train_data = None # this is just for garbage collector to deal with
 # num qubits is square of filter size
-quantum_circuits = [generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7) for _ in range(12)]
+quantum_circuits = [generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7) for _ in range(4)]
 
 # Probably want to save a numpy array for every 100 images for memory efficiency? Can come to this problem if it arises
 #%%
-img_outputs = []
 
 for idx, image in enumerate(this_data):
     image = image.reshape((28,28))
     outputs = [conv(qc, 2, image) for qc in quantum_circuits]
     print(f"IMAGE COMPLETED: {idx+1} of {args.num_datapoints}")
-    img_outputs.append(outputs)
+    np.save(f'quantum_data/img{args.start_idx + idx}.npy',outputs)
+    outputs = None
     gc.collect()
-np.save(f'./quantum_data/start{args.start_idx}to{args.start_idx+args.num_datapoints}.npy',img_outputs)
-
