@@ -13,16 +13,16 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-start_idx',type=int)
 parser.add_argument('-num_datapoints',type=int)
-
 args = parser.parse_args()
+
 #seed means that the circuits generated are the same accross machines
 np.random.seed(42)
-
 train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
 this_data = train_data[args.start_idx:args.start_idx+args.num_datapoints].drop(['label'],axis=1)
 this_data = (this_data / 255).round().astype(np.uint8).values
+train_data = None # this is just for garbage collector to deal with
 # num qubits is square of filter size
-quantum_circuits = [generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7) for _ in range(2)]
+quantum_circuits = [generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7) for _ in range(12)]
 
 # Probably want to save a numpy array for every 100 images for memory efficiency? Can come to this problem if it arises
 #%%
@@ -31,7 +31,7 @@ img_outputs = []
 for idx, image in enumerate(this_data):
     image = image.reshape((28,28))
     outputs = [conv(qc, 2, image) for qc in quantum_circuits]
-    print("IMAGE COMPLETED:", idx)
+    print(f"IMAGE COMPLETED: {idx+1} of {args.num_datapoints}")
     img_outputs.append(outputs)
 np.save(f'./quantum_data/start{args.start_idx}to{args.start_idx+args.num_datapoints}.npy',img_outputs)
 
