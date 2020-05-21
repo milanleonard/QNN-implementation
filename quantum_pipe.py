@@ -8,17 +8,14 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 #%%
-SINGLE_GATE_SET = np.array(['X','Y','Z','T','S','H'])
-MULTI_GATE_SET = np.array(['CNOT'])
-train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
-#%%
+np.random.seed(42)
 def generate_random_circuit(depth, num_qubits, prob_appl_single, prob_appl_multi):
     assert prob_appl_multi > prob_appl_single, "multi gate qubit application should be less likely than single (arbitrary, could change)"
-    qc = QuantumCircuit(qr)
+    qc = QuantumCircuit(num_qubits)
     for step in range(depth):
         for qubit in range(num_qubits):
             random_prob = np.random.uniform(0,1)
-            if random_prob > 0.1:
+            if random_prob > 0.2:
                 qc.h(qubit) # let's do lots of hadamards
             if random_prob > prob_appl_multi:
                 # handles two qubit operations, should extend to N qubits for Toffoli at some point
@@ -57,55 +54,45 @@ def handle_gate(qc, gate, qubit, other_qubit=0):
     if gate == "H":
         qc.h(qubit)
 
-# %%
-backend = Aer.get_backend('qasm_simulator')
-qc = generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.5,prob_appl_multi=0.8)
-job = execute(qc, backend, shots=1000)
-result = job.result()
-result.get_counts(qc)
 
-# %%
-''' Now the goal is to init the state threshholded on our dummy input, let's pick out
-an input to play with'''
 
-#currently not being clever with my threshold at all just rounding 
-dummy_example = train_data.values[0,1:].reshape(28,28) / 255
-dummy_example_rounded = np.round(dummy_example)
-plt.gray()
-print("Pre thresholding")
-plt.imshow(dummy_example)
-plt.show()
-print("Post thresholding")
-plt.imshow(dummy_example_rounded)
-plt.show()
 # %%
 ''' I just realized trying do this with fashion-mnist might be a little problematic but whatever
 moving on with my life 
 We want to initialize the state s.t. arbitray combinations of a NxN grid of 0s and 1s map to a different quantum state
 Here we try and define the convolutional filter that we need
 '''
-padded_dummy = np.pad(dummy_example_rounded,1)
-def conv_(qc, filter_size, image, mode='threshold'):
+# Pass in mean value on the qubits
+def pad_img(filter_size,img):
+    if filter_size % 2 == 0:
+        return np.pad(img,((1,0),(1,0)))
+    else:
+        return np.pad(img,1)
+def conv(qc, filter_size, image, mode='threshold'):
     ''' Write the loops to slide our 'filter' over our image '''
     # here filter doesn't actually matter, we just use the flattened binary list as our init
     # might as well hard-code 3x3 filters, can happily handle 2^9 = 512 states
-
-    img_height, img_width = image.shape
+    padded_img = pad_img(filter_size, image)
+    print(image.shape)
+    img_height, img_width = padded_img.shape
+    conv_output = np.zeros(image.shape)
     for down_idx in range(img_height - (filter_size-1)):
         for across_idx in range(img_width  - (filter_size-1)):
-            section = image[down_idx:down_idx + filter_size, across_idx: across_idx + filter_size]
-            # TODO NEED TO ADD QUANTUM BIT HERE
+            section = padded_img[down_idx:down_idx + filter_size, across_idx: across_idx + filter_size]
             init_arr = encoding_function(section,mode)
             qc.initialize(init_arr, qc.qubits)
-            job = execute(qc, backend, shots=1000)
+            job = execute(qc, backend, shots=10)
             results = job.result()
             counts = results.get_counts(qc)
-            # THIS BIT BELOW IN INCORRECT, NEED TO INDEX INTO 2**n LONG VECTOR
-            sorted_vec = np.array([counts[key] for key in sorted(counts)])
-            sorted_vec = sorted_vec/ np.sqrt(np.sum(sorted_vec**2))
-            print(sorted_vec)
-            break
-        break
+            output = np.zeros(len(init_arr))
+            for key, value in counts.items():
+                keyidx = int(key,2)
+                output[keyidx] = value
+            output = output/ np.sqrt(np.sum(output**2))
+            entropy = shannon_entropy(output)
+            conv_output[down_idx,across_idx] = entropy
+    print("filter completed")
+    return conv_output
 
 
 # %%
@@ -127,3 +114,27 @@ def encoding_function(section,mode):
 
 
 # %%
+''' Output encoding '''
+
+def shannon_entropy(input_arr):
+    return -np.sum(input_arr * np.log(input_arr+1e-11)) # offset for non-zero elements
+# %%
+if __name__ == '__main__':
+    SINGLE_GATE_SET = np.array(['X','Y','Z','T','S','H'])
+    MULTI_GATE_SET = np.array(['CNOT'])
+    train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
+    backend = Aer.get_backend('qasm_simulator')
+    qc = generate_random_circuit(depth=10,num_qubits=9,prob_appl_single=0.5,prob_appl_multi=0.8)
+    job = execute(qc, backend, shots=1000)
+    result = job.result()
+    result.get_counts(qc)
+    #currently not being clever with my threshold at all just rounding 
+    dummy_example = train_data.values[0,1:].reshape(28,28) / 255
+    dummy_example_rounded = np.round(dummy_example)
+    plt.gray()
+    print("Pre thresholding")
+    plt.imshow(dummy_example)
+    plt.show()
+    print("Post thresholding")
+    plt.imshow(dummy_example_rounded)
+    plt.show()
