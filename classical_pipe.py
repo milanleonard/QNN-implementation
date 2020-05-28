@@ -75,9 +75,9 @@ if not args.quantum:
     N_train = len(X_train)
     N_test = len(X_test)
     X_train = X_train / 255
-    X_train_torch = torch.Tensor(X_train.reshape(N_train,1,28,28)).round()
+    X_train_torch = torch.Tensor(X_train.reshape(N_train,1,28,28).round())
     X_test = X_test / 255
-    X_test_torch = torch.Tensor(X_test.reshape(N_test,1,28,28)).round()
+    X_test_torch = torch.Tensor(X_test.reshape(N_test,1,28,28).round())
     cnn = CNN(1)
 else:
     print("Grabbing data")
@@ -85,10 +85,9 @@ else:
     N_test = 10000
     y_train_torch = torch.LongTensor(DATA['label'].values[:10000])
     test_idxs = np.random.choice(range(10000,60000),10000)
-    y_test_torch = torch.LongTensor(DATA['label'].values[test_idxs]).long()
+    y_test_torch = torch.LongTensor(DATA['label'].values[test_idxs])
     X_test_torch = DATA.values[test_idxs,1:] / 255
-    X_test_torch = torch.tensor((X_test_torch.reshape(N_test,1,28,28))).round().long()
-    X_test_torch = torch.Tensor(DATA.values[test_idxs,1:].round().reshape(N_test,1,28,28)).long()
+    X_test_torch = torch.Tensor((X_test_torch.reshape(N_test,1,28,28).round()))
     qdata = np.zeros(shape=(10000,5,28,28))
     imgs_fpath = sorted(glob.glob('./quantum_data/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
     #load all of the quantum data
@@ -154,6 +153,7 @@ for epoch in range(EPOCHS):
                 test_loss = float(criterion(cnn(tmp),y_test_torch))
             print(f"TEST LOSS: {test_loss:.2f}")
             test_losses.append(test_loss)
+    print("EPOCH:",epoch)
 mode = "classical" if not args.quantum else "quantum"
 np.save(f"./results/{mode}/losses.npy",np.asarray(losses))
 np.save(f"./results/{mode}/test_losses.npy",np.asarray(test_losses))
