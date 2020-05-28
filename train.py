@@ -15,6 +15,7 @@ plt.gray()
 argparser = argparse.ArgumentParser()
 argparser.add_argument('--quantum', type=bool, default=False)
 argparser.add_argument('--display', type=bool, default=False)
+argparser.add_argument('--epochs', type=int, default=10)
 args = argparser.parse_args()
 
 # %%
@@ -47,8 +48,7 @@ class CNN(nn.Module):
 #%%
 ''' CONFIG Variables '''
 TEST_SIZE = 0.1
-BATCH_SIZE = 128
-EPOCHS = 10
+BATCH_SIZE = 100
 
 # %%
 # Can just load the whole CSV into memory since it's only 70MB
@@ -84,17 +84,20 @@ else:
     N_train = 10000
     N_test = 10000
     y_train_torch = torch.LongTensor(DATA['label'].values[:10000])
-    test_idxs = np.random.choice(range(10000,60000),10000)
-    y_test_torch = torch.LongTensor(DATA['label'].values[test_idxs])
-    X_test_torch = DATA.values[test_idxs,1:] / 255
-    X_test_torch = torch.Tensor((X_test_torch.reshape(N_test,1,28,28).round()))
-    qdata = np.zeros(shape=(10000,5,28,28))
-    imgs_fpath = sorted(glob.glob('./quantum_data/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
+
+    qtraindata = np.zeros(shape=(10000,5,28,28))
+    qtestdata = np.zeros(shape=(10000,5,28,28))
+    imgs_fpath = sorted(glob.glob('./quantum_data/train/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
     #load all of the quantum data
     for idx, img_fpath in enumerate(imgs_fpath):
-        qdata[idx] = np.load(img_fpath)[:,:-1,:-1]
-    X_train_torch = torch.Tensor(qdata)
-    qdata=None # to garbage collect at some point
+        qtraindata[idx] = np.load(img_fpath)[:,:-1,:-1]
+    imgs_fpath = sorted(glob.glob('./quantum_data/test/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
+    #load all of the quantum data
+    for idx, img_fpath in enumerate(imgs_fpath):
+        qtestdata[idx] = np.load(img_fpath)[:,:-1,:-1]
+    X_train_torch = torch.Tensor(qtraindata)
+    X_test_torch = torch.Tensor(qtestdata)
+    qdata, qtraindata = None, None # to garbage collect at some point
     cnn = CNN(5)
     
 
@@ -122,12 +125,14 @@ if args.display:
 optim = torch.optim.Adam(cnn.parameters(),lr=0.01)
 # %%
 losses = []
-epoch_loss = []
 test_losses = []
+accs = []
+test_accs = []
+
 criterion = nn.CrossEntropyLoss()
 acc_sum = 0
 total = 0
-for epoch in range(EPOCHS):
+for epoch in range(args.epochs):
     for i in range(10000 // BATCH_SIZE):
         total += BATCH_SIZE   
         imgs = X_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
@@ -137,23 +142,23 @@ for epoch in range(EPOCHS):
         loss = criterion(preds,labels)
         lossrepr = float(loss)
         if i == 0: 
-            print(f"INITIAL EPOCH: {epoch} LOSS: {lossrepr:.2f}"); epoch_loss.append(float(loss))
+            print(f"INITIAL EPOCH: {epoch} LOSS: {lossrepr:.2f}")
         losses.append(lossrepr)
         optim.zero_grad()
         loss.backward()
         optim.step()
-        if i % 10 == 0: 
-            print(f"{lossrepr:.2f} || {float(acc_sum)/total:.2f}%"); acc_sum=0; total = 0
-            if not args.quantum:
-                test_loss = float(criterion(cnn(X_test_torch),y_test_torch))
-            else:
-                tmp = X_test_torch
-                for i in range(4):
-                    tmp = torch.cat((tmp,X_test_torch),dim=1)
-                test_loss = float(criterion(cnn(tmp),y_test_torch))
-            print(f"TEST LOSS: {test_loss:.2f}")
-            test_losses.append(test_loss)
+        acc = acc_sum / total
+        if i % 5 == 0: print(f"{lossrepr:.2f} || {acc:.2f}%")
+        accs.append(acc); acc_sum=0; total = 0
+        test_preds = cnn(X_test_torch)
+        test_loss = float(criterion(cnn(X_test_torch),y_test_torch))
+        test_losses.append(test_loss)
+        test_acc = torch.sum(test_preds.argmax(dim=1) == labels) / N_test
+        test_accs.append(test_acc)
     print("EPOCH:",epoch)
 mode = "classical" if not args.quantum else "quantum"
+
 np.save(f"./results/{mode}/losses.npy",np.asarray(losses))
 np.save(f"./results/{mode}/test_losses.npy",np.asarray(test_losses))
+np.save(f"./results/{mode}/accs.npy",np.asarray(accs))
+np.save(f"./results/{mode}/testaccs.npy",np.asarray(test_accs))

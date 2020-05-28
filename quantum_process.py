@@ -12,14 +12,17 @@ import argparse
 import gc
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-start_idx',type=int)
-parser.add_argument('-num_datapoints',type=int)
+parser.add_argument('-start_idx', type=int)
+parser.add_argument('-num_train', type=int)
+parser.add_argument('-num_test', type=int)
 args = parser.parse_args()
 
 #seed means that the circuits generated are the same accross machines
 train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
-this_data = train_data[args.start_idx:args.start_idx+args.num_datapoints].drop(['label'],axis=1)
-this_data = (this_data / 255).round().astype(np.uint8).values
+train = train_data[args.start_idx:args.start_idx+args.num_train].drop(['label'],axis=1)
+train = (train / 255).round().astype(np.uint8).values
+test = train_data[args.start_idx+args.num_train:args.start_idx+args.num_train+args.num_test].drop(['label'],axis=1)
+test = (test / 255).round().astype(np.uint8).values
 train_data = None # this is just for garbage collector to deal with
 # num qubits is square of filter size
 
@@ -28,12 +31,16 @@ train_data = None # this is just for garbage collector to deal with
 NUM_FILTERS = 5
 np.random.seed(42)
 quantum_circuits = [(generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.3,prob_appl_multi=0.7),{}) for _ in range(NUM_FILTERS)]
-for idx, image in enumerate(this_data):
-    # Note the incredibly annoying reinitialization of qcs every run comes from https://stackoverflow.com/questions/61929724/python-script-slowing-down-as-time-progresses-resolved?noredirect=1#comment109537202_61929724
-    image = image.reshape((28,28))
-    image = prepare_img(2,image)
-    outputs = []
-    for qc_idx, qc in enumerate(quantum_circuits):
-        outputs.append(conv(qc[0], 2, image, cache=qc[1]))
-    print(f"IMAGE COMPLETED: {idx+1} of {args.num_datapoints}")
-    np.save(f'quantum_data/img{args.start_idx + idx}.npy',outputs)
+def process(input_arr,output_dir='train'):
+    for idx, image in enumerate(input_arr):
+        # Note the incredibly annoying reinitialization of qcs every run comes from https://stackoverflow.com/questions/61929724/python-script-slowing-down-as-time-progresses-resolved?noredirect=1#comment109537202_61929724
+        image = image.reshape((28,28))
+        image = prepare_img(2,image)
+        outputs = []
+        for qc_idx, qc in enumerate(quantum_circuits):
+            outputs.append(conv(qc[0], 2, image, cache=qc[1]))
+        print(f"IMAGE COMPLETED: {idx+1} of {len(input_arr)}")
+        np.save(f'quantum_data/{output_dir}/img{args.start_idx + idx}.npy',outputs)
+
+#process(train)
+process(test,output_dir='test')
