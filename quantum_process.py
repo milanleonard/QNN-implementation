@@ -40,7 +40,10 @@ def process(input_arr,output_dir='train'):
         for qc_idx, qc in enumerate(quantum_circuits):
             outputs.append(conv(qc[0], 2, image, cache=qc[1]))
         print(f"IMAGE COMPLETED: {idx+1} of {len(input_arr)}")
-        np.save(f'quantum_data/{output_dir}/img{args.start_idx + idx}.npy',outputs)
+        img = args.start_idx + idx if 'train' in output_dir else args.start_idx + args.num_train + idx
+        np.save(f'quantum_data/{output_dir}/img{args.start_idx + args.num_train + idx}.npy',outputs)
 
-#process(train)
-process(test,output_dir='test')
+process(train, output_dir = 'trainpri')
+process(test, output_dir='testpri')
+
+# %%

@@ -130,11 +130,8 @@ accs = []
 test_accs = []
 
 criterion = nn.CrossEntropyLoss()
-acc_sum = 0
-total = 0
 for epoch in range(args.epochs):
     for i in range(10000 // BATCH_SIZE):
-        total += BATCH_SIZE   
         imgs = X_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         labels = y_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         preds = cnn(imgs)
@@ -147,6 +144,7 @@ for epoch in range(args.epochs):
         loss.backward()
         optim.step()
         acc = float(torch.sum(preds.argmax(dim=1) == labels)) / BATCH_SIZE
+        accs.append(acc)
         test_preds = cnn(X_test_torch)
         test_loss = float(criterion(cnn(X_test_torch),y_test_torch))
         test_losses.append(test_loss)
@@ -156,7 +154,7 @@ for epoch in range(args.epochs):
     print("EPOCH:",epoch)
 mode = "classical" if not args.quantum else "quantum"
 print("Finally getting to save some stuff!")
-np.save(f"./results/{mode}/losses.npy",np.asarray(losses))
-np.save(f"./results/{mode}/test_losses.npy",np.asarray(test_losses))
-np.save(f"./results/{mode}/accs.npy",np.asarray(accs))
-np.save(f"./results/{mode}/testaccs.npy",np.asarray(test_accs))
+np.save(f"./results/{mode}/lossespri.npy",np.asarray(losses))
+np.save(f"./results/{mode}/test_lossespri.npy",np.asarray(test_losses))
+np.save(f"./results/{mode}/accspri.npy",np.asarray(accs))
+np.save(f"./results/{mode}/testaccspri.npy",np.asarray(test_accs))

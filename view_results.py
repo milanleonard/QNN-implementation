@@ -13,26 +13,45 @@ def exponential_smoothing(input_arr, alpha=0.1):
 # %%
 c_losses = np.load('./results/classical/losses.npy')
 c_tlosses = np.load('./results/classical/test_losses.npy')
+c_acc = np.load('./results/classical/accs.npy')
+c_tacc = np.load('./results/classical/testaccs.npy')
+
 
 q_losses = np.load('./results/quantum/losses.npy')
 q_tlosses = np.load('./results/quantum/test_losses.npy')
+q_acc = np.load('./results/quantum/accs.npy')
+q_tacc = np.load('./results/quantum/testaccs.npy')
 
 #%%
-x = np.linspace(0,10,780)
-plt.plot(exponential_smoothing(c_losses), label='classical')
-plt.plot(exponential_smoothing(q_losses), label='quantum')
-plt.xlabel('Training iteration')
-plt.ylabel('Loss')
-plt.title('Loss')
-plt.legend()
-plt.show()
-# %%
-xt = np.linspace(0,10,80)
-plt.plot(xt,exponential_smoothing(c_tlosses), label='classical')
-plt.plot(xt,exponential_smoothing(q_tlosses), label='quantum')
-plt.xlabel('Epoch')
-plt.ylabel('Test Loss')
-plt.legend()
-plt.show()
 
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(9, 9))
+
+ax1.plot(exponential_smoothing(c_losses), label='classical')
+ax1.plot(exponential_smoothing(q_losses), label='quantum')
+ax1.set_xlabel('Training iteration')
+ax1.set_ylabel('Loss')
+ax1.legend()
+# %%
+ax2.plot(exponential_smoothing(c_tlosses), label='classical')
+ax2.plot(exponential_smoothing(q_tlosses), label='quantum')
+ax2.set_xlabel('Training iteration')
+ax2.set_ylabel('Test Loss')
+ax2.legend()
+
+# %%
+ax3.plot(exponential_smoothing(c_tlosses), label='classical')
+ax3.plot(exponential_smoothing(q_tlosses), label='quantum')
+ax3.set_xlabel('Training iteration')
+ax3.set_ylabel('Test Loss')
+ax3.legend()
+
+#%%
+ax4.plot(exponential_smoothing(c_tacc), label='classical')
+ax4.plot(exponential_smoothing(q_tacc), label='quantum')
+ax4.set_xlabel('Training iteration')
+ax4.set_ylabel('Test accuracy')
+ax4.legend()
+
+plt.tight_layout()
+plt.show()
 # %%
