@@ -84,17 +84,17 @@ else:
     N_train = 10000
     N_test = 10000
     y_train_torch = torch.LongTensor(DATA['label'].values[:10000])
-
     qtraindata = np.zeros(shape=(10000,5,28,28))
-    qtestdata = np.zeros(shape=(10000,5,28,28))
     imgs_fpath = sorted(glob.glob('./quantum_data/train/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
     #load all of the quantum data
     for idx, img_fpath in enumerate(imgs_fpath):
         qtraindata[idx] = np.load(img_fpath)[:,:-1,:-1]
     imgs_fpath = sorted(glob.glob('./quantum_data/test/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
     #load all of the quantum data
+    qtestdata = np.zeros(shape=(len(imgs_fpath),5,28,28))
     for idx, img_fpath in enumerate(imgs_fpath):
         qtestdata[idx] = np.load(img_fpath)[:,:-1,:-1]
+    y_test_torch = torch.LongTensor(DATA['label'].values[10000:10000+len(qtestdata)])
     X_train_torch = torch.Tensor(qtraindata)
     X_test_torch = torch.Tensor(qtestdata)
     qdata, qtraindata = None, None # to garbage collect at some point
@@ -138,7 +138,6 @@ for epoch in range(args.epochs):
         imgs = X_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         labels = y_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         preds = cnn(imgs)
-        acc_sum += torch.sum(preds.argmax(dim=1) == labels)
         loss = criterion(preds,labels)
         lossrepr = float(loss)
         if i == 0: 
@@ -147,14 +146,13 @@ for epoch in range(args.epochs):
         optim.zero_grad()
         loss.backward()
         optim.step()
-        acc = acc_sum / total
-        if i % 5 == 0: print(f"{lossrepr:.2f} || {acc:.2f}%")
-        accs.append(acc); acc_sum=0; total = 0
+        acc = float(torch.sum(preds.argmax(dim=1) == labels)) / BATCH_SIZE
         test_preds = cnn(X_test_torch)
         test_loss = float(criterion(cnn(X_test_torch),y_test_torch))
         test_losses.append(test_loss)
-        test_acc = torch.sum(test_preds.argmax(dim=1) == labels) / N_test
+        test_acc = float(torch.sum(test_preds.argmax(dim=1) == y_test_torch)) / N_test
         test_accs.append(test_acc)
+        print(f"Train loss: {lossrepr:.4f} || Train acc: {acc:.2f}% Test loss: {test_losses[-1]:.4f} || Test acc: {test_accs[-1]:.2f}%")
     print("EPOCH:",epoch)
 mode = "classical" if not args.quantum else "quantum"
 
