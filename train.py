@@ -155,7 +155,7 @@ for epoch in range(args.epochs):
         print(f"Train loss: {lossrepr:.4f} || Train acc: {acc:.2f}% Test loss: {test_losses[-1]:.4f} || Test acc: {test_accs[-1]:.2f}%")
     print("EPOCH:",epoch)
 mode = "classical" if not args.quantum else "quantum"
-
+print("Finally getting to save some stuff!")
 np.save(f"./results/{mode}/losses.npy",np.asarray(losses))
 np.save(f"./results/{mode}/test_losses.npy",np.asarray(test_losses))
 np.save(f"./results/{mode}/accs.npy",np.asarray(accs))
