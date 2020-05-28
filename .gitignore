@@ -3,3 +3,4 @@ fashion-mnist/fashion-mnist_train.csv
 *~
 /quantum_data
 /__pycache___
+.vscode

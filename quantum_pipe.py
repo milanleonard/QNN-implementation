@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import time
 #%%
-SINGLE_GATE_SET = np.array(['X','Y','Z','T','S','H'])
+SINGLE_GATE_SET = np.array(['X','Y','Z','H','RZ'])
 MULTI_GATE_SET = np.array(['CNOT'])
 BACKEND = Aer.get_backend('qasm_simulator')
 np.random.seed(42)
@@ -59,6 +59,10 @@ def handle_gate(qc, gate, qubit, other_qubit=0):
         qc.s(qubit)
     if gate == "H":
         qc.h(qubit)
+    if gate == 'RZ':
+        angle = np.random.uniform(0,2*np.pi)
+        qc.rz(angle,qubit)
+
 
 
 
@@ -70,8 +74,8 @@ Here we try and define the convolutional filter that we need
 '''
 
 def prepare_img(filter_size,img):
-    ''' Unfortunately 28*28 takes WAYY too long so having to resize image'''
-    img = Image.fromarray(img).resize((14,14))
+    '''Prepare image for use'''
+    #img = Image.fromarray(img).resize((14,14))
     img = np.array(img)
     img = pad_img(filter_size, img)
     return img
@@ -83,29 +87,37 @@ def pad_img(filter_size,img):
     else:
         return np.pad(img,1)
 
-def conv(qc, filter_size, image, mode='threshold'):
+def conv(qc, filter_size, image, cache, mode='threshold'):
     ''' Write the loops to slide our 'filter' over our image '''
     # here filter doesn't actually matter, we just use the flattened binary list as our init
     # might as well hard-code 3x3 filters, can happily handle 2^9 = 512 states
-    start = time.time()
     img_height, img_width = image.shape
     conv_output = np.zeros(image.shape)
     for down_idx in range(img_height - (filter_size-1)):
         for across_idx in range(img_width  - (filter_size-1)):
             section = image[down_idx:down_idx + filter_size, across_idx: across_idx + filter_size]
             init_arr = encoding_function(section,mode)
-            qc.initialize(init_arr, qc.qubits)
-            job = execute(qc, BACKEND, shots=500)
-            results = job.result()
-            counts = results.get_counts(qc)
-            output = np.zeros(len(init_arr))
-            for key, value in counts.items():
-                keyidx = int(key,2)
-                output[keyidx] = value
-            output = output/ np.sqrt(np.sum(output**2))
-            entropy = shannon_entropy(output)
-            conv_output[down_idx,across_idx] = entropy
-    print(f"filter completed in {time.time()-start} s")
+            key_arr = str(init_arr)
+            if key_arr in cache:
+                num_1s = cache[key_arr]
+            else:
+                qc.initialize(init_arr, qc.qubits)
+                initialize_gate = qc.data.pop()
+                qc.data = [initialize_gate] + qc.data
+                qc.draw()
+                job = execute(qc, BACKEND, shots=2000)
+                results = job.result()
+                counts = results.get_counts(qc)
+                qc.data = qc.data[1:]
+                # output = np.zeros(len(init_arr))
+                # for key, value in counts.items():
+                #     keyidx = int(key,2)
+                #     output[keyidx] = value
+                # output = output / np.sqrt(np.sum(output**2))
+                num_1s = sorted(counts.items(), key=lambda x : x[-1], reverse=True)[0][0].count('1')
+                cache[key_arr] = num_1s
+                #entropy = shannon_entropy(output) #shannon entropy
+            conv_output[down_idx,across_idx] = num_1s
     return conv_output
 
 
@@ -129,14 +141,15 @@ def encoding_function(section,mode):
 
 # %%
 ''' Output encoding '''
-
+## TODO make a function that can change these based on modes more quickly, of input = counts
 def shannon_entropy(input_arr):
     return -np.sum(input_arr * np.log(input_arr+1e-11)) # offset for non-zero elements
 # %%
 if __name__ == '__main__':
     train_data = pd.read_csv('./fashion-mnist/fashion-mnist_train.csv')
-    # qc = generate_random_circuit(depth=10,num_qubits=9,prob_appl_single=0.5,prob_appl_multi=0.8)
+    qc = generate_random_circuit(depth=10,num_qubits=4,prob_appl_single=0.5,prob_appl_multi=0.8)
     # job = execute(qc, BACKEND, shots=1000)
+    job = execute(qc, BACKEND, shots=500)
     result = job.result()
     result.get_counts(qc)
     #currently not being clever with my threshold at all just rounding 
