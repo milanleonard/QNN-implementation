@@ -28,21 +28,21 @@ fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(9, 9))
 
 ax1.plot(exponential_smoothing(c_losses), label='classical')
 ax1.plot(exponential_smoothing(q_losses), label='quantum')
-ax1.set_xlabel('Training iteration')
-ax1.set_ylabel('Loss')
+ax1.set_ylabel('Train Loss')
+ax1.set_title('Training performance')
 ax1.legend()
 # %%
 ax2.plot(exponential_smoothing(c_tlosses), label='classical')
 ax2.plot(exponential_smoothing(q_tlosses), label='quantum')
-ax2.set_xlabel('Training iteration')
 ax2.set_ylabel('Test Loss')
+ax2.set_title('Test performance')
 ax2.legend()
 
 # %%
-ax3.plot(exponential_smoothing(c_tlosses), label='classical')
-ax3.plot(exponential_smoothing(q_tlosses), label='quantum')
+ax3.plot(exponential_smoothing(c_acc), label='classical')
+ax3.plot(exponential_smoothing(q_acc), label='quantum')
 ax3.set_xlabel('Training iteration')
-ax3.set_ylabel('Test Loss')
+ax3.set_ylabel('Train accuracy')
 ax3.legend()
 
 #%%
