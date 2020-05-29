@@ -10,7 +10,6 @@ from sklearn.model_selection import train_test_split
 import glob
 import re
 import argparse
-plt.gray()
 
 argparser = argparse.ArgumentParser()
 argparser.add_argument('--quantum', type=bool, default=False)
@@ -68,33 +67,39 @@ labels_to_image = {
 
 # %%
 if not args.quantum:
+    num_quantum = 3000
+    num_test = 1000
     # if doing on just classical values
     X, y = DATA.values[:,1:], DATA['label'].values
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE)
-    y_train_torch, y_test_torch = torch.LongTensor(y_train), torch.LongTensor(y_test)
+    y_train_torch, y_test_torch = torch.LongTensor(y_train)[:num_quantum], torch.LongTensor(y_test)[:num_test]
     N_train = len(X_train)
     N_test = len(X_test)
     X_train = X_train / 255
     X_train_torch = torch.Tensor(X_train.reshape(N_train,1,28,28).round())
     X_test = X_test / 255
     X_test_torch = torch.Tensor(X_test.reshape(N_test,1,28,28).round())
+    X_train_torch = X_train_torch[:num_quantum]
+    X_test_torch = X_test_torch[:num_test]
     cnn = CNN(1)
+    N_train = len(X_train_torch)
+    N_test = len(X_test_torch)
 else:
     print("Grabbing data")
-    N_train = 10000
-    N_test = 10000
-    y_train_torch = torch.LongTensor(DATA['label'].values[:10000])
-    qtraindata = np.zeros(shape=(10000,5,28,28))
-    imgs_fpath = sorted(glob.glob('./quantum_data/train/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
+    N_train = 3000
+    N_test = 1000
+    y_train_torch = torch.LongTensor(DATA['label'].values[20000:23000])
+    qtraindata = np.zeros(shape=(N_train,5,28,28))
+    imgs_fpath = sorted(glob.glob('./quantum_data/trainpri/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
     #load all of the quantum data
     for idx, img_fpath in enumerate(imgs_fpath):
         qtraindata[idx] = np.load(img_fpath)[:,:-1,:-1]
-    imgs_fpath = sorted(glob.glob('./quantum_data/test/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
+    imgs_fpath = sorted(glob.glob('./quantum_data/testpri/*.npy'), key = lambda x : int(re.search('\d+',x)[0]))
     #load all of the quantum data
     qtestdata = np.zeros(shape=(len(imgs_fpath),5,28,28))
     for idx, img_fpath in enumerate(imgs_fpath):
         qtestdata[idx] = np.load(img_fpath)[:,:-1,:-1]
-    y_test_torch = torch.LongTensor(DATA['label'].values[10000:10000+len(qtestdata)])
+    y_test_torch = torch.LongTensor(DATA['label'].values[23000:23000+len(qtestdata)])
     X_train_torch = torch.Tensor(qtraindata)
     X_test_torch = torch.Tensor(qtestdata)
     qdata, qtraindata = None, None # to garbage collect at some point
@@ -104,6 +109,7 @@ else:
 
 # %%
 if args.display:
+    plt.gray()
     print("Displaying 5 images")
     test_idx = np.random.randint(0, N_train)
     for i in range(5):
@@ -122,16 +128,17 @@ if args.display:
     plt.close()
 
 
-optim = torch.optim.Adam(cnn.parameters(),lr=0.01)
+optim = torch.optim.Adam(cnn.parameters(),lr=0.01, weight_decay=0.01)
 # %%
 losses = []
 test_losses = []
 accs = []
 test_accs = []
-
+if args.epochs == 0:
+    print("Not training")
 criterion = nn.CrossEntropyLoss()
 for epoch in range(args.epochs):
-    for i in range(10000 // BATCH_SIZE):
+    for i in range(N_train // BATCH_SIZE):
         imgs = X_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         labels = y_train_torch[i*BATCH_SIZE:(i+1)*BATCH_SIZE]
         preds = cnn(imgs)
@@ -154,7 +161,7 @@ for epoch in range(args.epochs):
     print("EPOCH:",epoch)
 mode = "classical" if not args.quantum else "quantum"
 print("Finally getting to save some stuff!")
-np.save(f"./results/{mode}/lossespri.npy",np.asarray(losses))
-np.save(f"./results/{mode}/test_lossespri.npy",np.asarray(test_losses))
-np.save(f"./results/{mode}/accspri.npy",np.asarray(accs))
-np.save(f"./results/{mode}/testaccspri.npy",np.asarray(test_accs))
+np.save(f"./results/{mode}/losses.npy",np.asarray(losses))
+np.save(f"./results/{mode}/test_losses.npy",np.asarray(test_losses))
+np.save(f"./results/{mode}/accs.npy",np.asarray(accs))
+np.save(f"./results/{mode}/testaccs.npy",np.asarray(test_accs))
